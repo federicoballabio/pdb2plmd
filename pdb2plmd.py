@@ -32,7 +32,11 @@ What it does:
   * adds terminal RNA/DNA suffixes 5/3/T when inferable from atom content:
       C5/U5/A5/G5 for 5'-OH residues; C3/U3/A3/G3 for 3'-OH residues;
       CT/UT/AT/GT for 5'-phosphate with terminal OP3/O3P/HOP3/HP.
-  * normalizes common nucleic-acid atom-name variants: * -> ', O1P/O2P/O3P kept as accepted by SAXS.cpp.
+  * normalizes common nucleic-acid atom-name variants: * -> ', O1P/O2P/O3P kept as accepted by SAXS.cpp;
+  * fixes CHARMM RNA 2-prime hydrogen naming for SAXS.cpp ONEBEAD:
+      H2'' -> H2'   for the C2' hydrogen;
+      H2'  -> HO2'  for the O2' hydroxyl hydrogen.
+    This is applied only to RNA residues, not DNA.
 
 Caveats:
   The script cannot know the actual GROMACS atom order unless the input PDB was extracted from the same
@@ -233,7 +237,7 @@ def parse_pdb(path: str) -> List[AtomRecord]:
 
 
 def normalize_atom_name(name: str) -> str:
-    # SAXS.cpp recognizes apostrophe names. Convert old PDB '*' notation to apostrophe.
+    # SAXS.cpp recognizes apostrophe names.
     name = name.strip().replace('*', "'")
     # Common aliases from some builders; keep O1P/O2P too because SAXS.cpp accepts them.
     aliases = {
@@ -242,6 +246,32 @@ def normalize_atom_name(name: str) -> str:
         "H5'1": "H5'1", "H5'2": "H5'2", "H2'1": "H2'1", "H2'2": "H2'2",
     }
     return aliases.get(name, name)
+
+
+def is_rna_resname_out(resname_out: str) -> bool:
+    r = resname_out.strip().upper()
+    return r in {"A", "C", "G", "U", "A3", "C3", "G3", "U3", "A5", "C5", "G5", "U5", "AT", "CT", "GT", "UT"}
+
+
+def normalize_atom_name_for_residue(name: str, resname_out: str) -> str:
+    """Return a SAXS.cpp-compatible atom name for a given output residue name.
+
+    CHARMM RNA commonly uses:
+      H2'' for the C2' hydrogen
+      H2'  for the O2' hydroxyl hydrogen
+
+    In SAXS.cpp RNA ONEBEAD, H2'' is not accepted for RNA residues. The C2' hydrogen
+    must be named H2', while the hydroxyl hydrogen can be HO2', HO'2 or H2'1.
+    Therefore, for RNA only, map H2'' -> H2' and H2' -> HO2'. DNA residues are left
+    unchanged because SAXS.cpp accepts H2'' for DNA.
+    """
+    n = normalize_atom_name(name)
+    if is_rna_resname_out(resname_out):
+        if n == "H2''":
+            return "H2'"
+        if n == "H2'":
+            return "HO2'"
+    return n
 
 
 def base_resname(resname: str) -> str:
@@ -404,12 +434,15 @@ def convert_atoms(atoms: List[AtomRecord]) -> Tuple[List[AtomRecord], List[str]]
                 log.append(f"Residue conversion: chain {chain_id} residue input {orig.resname_orig}{orig.resseq_orig} -> {resname_out}.")
 
             for a in res_atoms:
+                atom_out = normalize_atom_name_for_residue(a.atom_name, resname_out)
+                if atom_out != normalize_atom_name(a.atom_name):
+                    log.append(f"Atom-name conversion: chain {chain_id} residue input {orig.resname_orig}{orig.resseq_orig} output {resname_out}{r_idx}: {normalize_atom_name(a.atom_name)} -> {atom_out}.")
                 converted.append(replace(
                     a,
                     chain_out=chain_id,
                     resseq_out=r_idx,
                     resname_out=resname_out,
-                    atom_name_out=normalize_atom_name(a.atom_name),
+                    atom_name_out=atom_out,
                 ))
     return converted, log
 

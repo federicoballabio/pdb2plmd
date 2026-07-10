@@ -1,6 +1,6 @@
 # pdb2plmd
 
-Prepare a PDB file for PLUMED-SAS-ONEBEAD calculations.
+Prepare a PDB file for PLUMED SAXS.cpp ONEBEAD calculations.
 
 The main goal is to preserve the atom order from a PDB extracted from a
 simulation or from a selected atom group. This is required because PLUMED maps
@@ -18,6 +18,7 @@ the atoms in the ATOMS list to the atoms in the TEMPLATE PDB by order.
 - Converts common DNA residue names to SAXS.cpp/AMBER-style names.
 - Adds RNA/DNA terminal suffixes when detectable.
 - Normalizes old nucleic-acid atom names using * to apostrophe notation.
+- Fixes CHARMM RNA 2-prime hydrogen naming for SAXS.cpp ONEBEAD.
 - Optionally writes a verbose conversion log.
 
 ## Requirements
@@ -69,24 +70,26 @@ python3 pdb2plmd.py -i input.pdb -o template_saxs.pdb -a 1-1062 -g conversion.lo
 
 ## Important note about atom order
 
-The `-a` option uses the 1-based order of ATOM/HETATM records in the input PDB.
+The -a option uses the 1-based order of ATOM/HETATM records in the input PDB.
 It does not use the PDB atom serial number.
 
-For example, `-a 1-1062` means: keep the first 1062 ATOM/HETATM records found in
+For example, -a 1-1062 means: keep the first 1062 ATOM/HETATM records found in
 the input file.
 
 This is intentional. For PLUMED SAXS.cpp ONEBEAD, the output TEMPLATE PDB must
 have the same atom order as the atoms selected by PLUMED in the ATOMS field.
 
+The script does not sort atoms and does not rebuild the structure.
+
 ## Recommended workflow
 
 1. Extract the SAXS atom group from the simulation using the same order used by
    the PLUMED ATOMS selection.
-2. Run `pdb2plmd.py` on that extracted PDB.
+2. Run pdb2plmd.py on that extracted PDB.
 3. Use the generated PDB as the PLUMED SAXS.cpp TEMPLATE file.
 4. Use the same atom count and order in the PLUMED ATOMS field.
 
-## Nucleic-acid naming
+## Nucleic-acid residue naming
 
 The script converts common RNA names:
 
@@ -117,19 +120,44 @@ DT   -> DT
 Terminal suffixes are added when detectable:
 
 ```text
-C5, U5, A5, G5   5-prime hydroxyl terminal RNA residue
-C3, U3, A3, G3   3-prime hydroxyl terminal RNA residue
-CT, UT, AT, GT   5-prime phosphorylated terminal RNA residue
+C5, U5, A5, G5       5-prime hydroxyl terminal RNA residue
+C3, U3, A3, G3       3-prime hydroxyl terminal RNA residue
+CT, UT, AT, GT       5-prime phosphorylated terminal RNA residue
 DC5, DG5, DA5, DT5   5-prime hydroxyl terminal DNA residue
 DC3, DG3, DA3, DT3   3-prime hydroxyl terminal DNA residue
 DCT, DGT, DAT, DTT   5-prime phosphorylated terminal DNA residue
 ```
 
+## CHARMM RNA 2-prime hydrogen naming
+
+CHARMM RNA PDB files can use this atom naming around the ribose C2-prime atom:
+
+```text
+H2''   hydrogen attached to C2'
+H2'    hydroxyl hydrogen attached to O2'
+```
+
+SAXS.cpp RNA ONEBEAD expects:
+
+```text
+H2'    hydrogen attached to C2'
+HO2'   hydroxyl hydrogen attached to O2'
+```
+
+Therefore, for RNA residues, pdb2plmd.py converts:
+
+```text
+H2'' -> H2'
+H2'  -> HO2'
+```
+
+This conversion is not applied to DNA residues, where H2'' is valid.
+
 ## Output
 
 The output PDB contains:
 
-- REMARK lines documenting that the file was prepared by `pdb2plmd.py`.
+- REMARK lines documenting that the file was prepared by pdb2plmd.py.
 - ATOM/HETATM records in the same selected order as the input.
 - Sequential output atom serials.
 - Sequential residue numbers within each output chain.
@@ -155,6 +183,12 @@ If a log was generated, inspect warnings:
 
 ```bash
 grep WARNING template_saxs.pdb.log
+```
+
+For RNA, also check that no unsupported CHARMM H2'' RNA atom names remain:
+
+```bash
+grep "H2''" template_saxs.pdb
 ```
 
 ## Example
