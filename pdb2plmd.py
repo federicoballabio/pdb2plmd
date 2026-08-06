@@ -1,57 +1,14 @@
 #!/usr/bin/env python3
-"""
-pdb2plmd.py
-
-Convert a general PDB extracted from a simulation into a PLUMED SAXS.cpp ONEBEAD-compatible template PDB,
-while preserving the atom order of the selected simulation atoms.
-
-Key design choice:
-  The selected atom order is NEVER sorted or rebuilt. Output atoms appear in the same order as the
-  ATOM/HETATM records selected from the input PDB. This is essential because PLUMED maps the ATOMS=
-  list to TEMPLATE atoms by order.
-
-Required options:
-  -i / --input    input PDB
-  -o / --output   output PDB
-
-Optional:
-  -a / --atoms    atom/order range to keep, e.g. "1-1062" or "1-100,150,200-250". Default: all.
-                  The range refers to the 1-based ATOM/HETATM order in the input PDB, not necessarily
-                  the PDB serial number.
-  -g / --log      write a verbose log. If used without a filename, writes <output>.log
-
-What it does:
-  * preserves selected atom order;
-  * renumbers output atom serials sequentially from 1;
-  * assigns chain IDs if missing, preferentially from CHARMM/CHARMM-GUI segid such as RNAA/PROA;
-  * inserts TER records between inferred chains/breaks;
-  * renumbers residues sequentially within each output chain to avoid residue-number gaps;
-  * converts common nucleic-acid residue names to SAXS.cpp/AMBER-style ONEBEAD names:
-      ADE/RA -> A, CYT/RC -> C, GUA/RG -> G, URA/RU -> U;
-      DADE/DA -> DA, DCYT/DC -> DC, DGUA/DG -> DG, THY/DT -> DT;
-  * adds terminal RNA/DNA suffixes 5/3/T when inferable from atom content:
-      C5/U5/A5/G5 for 5'-OH residues; C3/U3/A3/G3 for 3'-OH residues;
-      CT/UT/AT/GT for 5'-phosphate with terminal OP3/O3P/HOP3/HP.
-  * normalizes common nucleic-acid atom-name variants: * -> ', O1P/O2P/O3P kept as accepted by SAXS.cpp;
-  * fixes CHARMM RNA 2-prime hydrogen naming for SAXS.cpp ONEBEAD:
-      H2'' -> H2'   for the C2' hydrogen;
-      H2'  -> HO2'  for the O2' hydroxyl hydrogen.
-    This is applied only to RNA residues, not DNA.
-
-Caveats:
-  The script cannot know the actual GROMACS atom order unless the input PDB was extracted from the same
-  simulation/index group in that order. Use this on a PDB produced from the same TPR/index selection used
-  in PLUMED ATOMS=.
-"""
+"""Prepare an ordered PDB template for PLUMED SAXS.cpp ONEBEAD."""
 
 from __future__ import annotations
 
 import argparse
-import os
+import math
 import re
-import sys
+from collections import Counter
 from dataclasses import dataclass, replace
-from typing import Dict, Iterable, List, Optional, Sequence, Tuple
+from typing import List, Optional, Sequence, Tuple
 
 CHAIN_IDS = list("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
 
@@ -71,10 +28,15 @@ PROTEIN_NAMES = {
     "ALA","ARG","ASN","ASP","CYS","CYX","GLN","GLU","GLY","HIS","HID","HIE","HIP",
     "HSD","HSE","HSP","ILE","LEU","LYS","MET","PHE","PRO","SER","THR","TRP","TYR","VAL"
 }
-# Residues that usually should be passed through as small molecules/ions if selected.
-PASS_THROUGH_RESNAMES = {
-    "NA","K","CL","CLA","SOD","POT","MG","CA","ZN","ZN2","MN","FE","CU","CO","CD","NI",
-    "FAD","FMN","HEM","HOH","WAT","TIP3","SOL"
+ION_MAP = {
+    "NA": "NA", "SOD": "NA", "NA+": "NA",
+    "K": "K", "POT": "K", "K+": "K",
+    "CL": "CL", "CLA": "CL", "CL-": "CL",
+    "CA": "CAL", "CAL": "CAL", "CA2+": "CAL",
+    "MG": "MG", "MG2+": "MG",
+    "ZN": "ZN", "ZN2": "ZN", "ZN2+": "ZN",
+    "FE2": "FE2", "FE3": "FE3",
+    "MN": "MN", "MN2+": "MN",
 }
 
 PENTOSE_ATOMS = {
@@ -90,24 +52,13 @@ BASE_ATOMS = {
 PHOSPHATE_ATOMS = {"P","OP1","OP2","OP3","O1P","O2P","O3P","HP","HOP3"}
 KNOWN_ONEBEAD_NUC_ATOMS = PENTOSE_ATOMS | BASE_ATOMS | PHOSPHATE_ATOMS
 
-# ---------------------------------------------------------------------------
-# GLYCANS
-#
-# PLUMED's ONEBEAD model is keyed on the PDB chemical-component codes, so this is
-# where every other spelling is translated. The sugar family follows from the
-# residue name; whether it is N-acetylated is read off the atoms, because an amide
-# nitrogen is present in GlcNAc/GalNAc and absent from Glc/Gal. That is what
-# separates NAG from BGC when a builder has written the N-acetylhexosamine under
-# the name of its parent hexose.
-# ---------------------------------------------------------------------------
-
-GLYCAN_CANONICAL = {"FUC", "MAN", "BMA", "GAL", "GLC", "NAG", "NGA", "SIA"}
+# Glycan names are normalized to the residue names used by SAXS.cpp ONEBEAD.
 
 _GLC_FAMILY = {"GLC", "BGC", "AGLC", "BGLC"}
 _GAL_FAMILY = {"GAL", "GLA", "AGAL", "BGAL"}
 _MAN_A      = {"MAN", "AMAN"}
 _MAN_B      = {"BMA", "BMAN"}
-_FUC_FAMILY = {"FUC", "FUL", "FCA", "FCB", "AFUC", "BFUC", "RAM", "RM4"}
+_FUC_FAMILY = {"FUC", "FUL", "FCA", "FCB", "AFUC", "BFUC"}
 _NEU_FAMILY = {"SIA", "SLB", "ANE5AC", "BNE5AC",
                "ANE5", "BNE5"}   # CHARMM names as truncated by the PDB writer
 _NAG_NAMES  = {"NAG", "NDG", "AGLCNA", "BGLCNA"}
@@ -115,18 +66,18 @@ _NGA_NAMES  = {"NGA", "A2G", "AGALNA", "BGALNA"}
 
 # recognised monosaccharides for which no ONEBEAD parameters exist
 GLYCAN_UNSUPPORTED = {
-    "XYL", "XYS", "XYP", "LXZ", "GCU", "BDP", "GCV", "IDS", "IDR", "SGN", "SUS",
+    "RAM", "RM4", "XXR", "XYL", "XYS", "XYP", "LXZ", "GCU", "BDP", "GCV", "IDS", "IDR", "SGN", "SUS",
     "UAP", "NGC", "NGE", "RIB", "ARA", "ARB", "AHR", "GLP", "PA1", "GCS",
 }
 
 # Residues renamed by a builder to mark a glycosylation site. Only a hydrogen is
 # lost to the glycosidic bond, so the bead is the parent amino acid.
 GLYCOSYLATION_SITE_MAP = {
-    "NLN": "ASN",   # N-linked Asn (GLYCAM)
-    "OLS": "SER",   # O-linked Ser (GLYCAM)
-    "OLT": "THR",   # O-linked Thr (GLYCAM)
-    "OLP": "PRO",   # O-linked hydroxyproline -- NOT parameterised, warned about below
+    "NLN": "ASN",
+    "OLS": "SER",
+    "OLT": "THR",
 }
+UNSUPPORTED_SITE_NAMES = {"OLP"}
 
 # GLYCAM/CHARMM -> PDB chemical component atom names.
 GLYCAN_ATOM_MAP_HEX = {
@@ -165,8 +116,11 @@ def canonical_glycan(resname, atom_names):
 
 def normalize_glycan_atom_name(name, resname_out):
     n = name.strip()
-    table = GLYCAN_ATOM_MAP_SIA if resname_out == "SIA" else GLYCAN_ATOM_MAP_HEX
-    return table.get(n, n)
+    if resname_out == "SIA":
+        return GLYCAN_ATOM_MAP_SIA.get(n, n)
+    if resname_out in {"NAG", "NGA"}:
+        return GLYCAN_ATOM_MAP_HEX.get(n, n)
+    return n
 
 
 @dataclass
@@ -188,6 +142,7 @@ class AtomRecord:
     segid: str
     element: str
     charge: str
+    line_number: int = 0
     ter_before: bool = False
 
     # Filled during conversion
@@ -199,22 +154,14 @@ class AtomRecord:
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
-        description="Prepare a PDB extracted from a simulation for PLUMED SAXS.cpp ONEBEAD, preserving atom order."
+        description="Prepare an ordered PDB template for PLUMED SAXS.cpp ONEBEAD."
     )
     p.add_argument("-i", "--input", required=True, help="Input PDB extracted from the simulation/TPR selection.")
     p.add_argument("-o", "--output", required=True, help="Output SAXS.cpp-compatible template PDB.")
     p.add_argument("-a", "--atoms", default="all",
                    help="1-based ATOM/HETATM order range to keep, e.g. '1-1062' or '1-100,150,200-250'. Default: all.")
     p.add_argument("--model", type=int, default=1,
-                   help="Which MODEL to keep from a multi-model file (default 1). PLUMED's PDB "
-                        "reader stops at the first ENDMDL, so a template holding every model of an "
-                        "NMR ensemble would not match what PLUMED sees.")
-    p.add_argument("--keep-all-models", action="store_true",
-                   help="Do not split on MODEL/ENDMDL (v1 behaviour).")
-    p.add_argument("--keep-altloc", action="store_true",
-                   help="Keep every alternate location. Off by default: altLoc duplicates put the "
-                        "same atom in the bead twice, which corrupts the mass, the centre of mass "
-                        "and the form factor, and places two copies ~1 A apart.")
+                   help="MODEL serial to keep from a multi-model file. Default: 1.")
     p.add_argument("--charmm", dest="charmm", action="store_true", default=None,
                    help="Force CHARMM/CHARMM-GUI handling: read the four-character residue "
                         "name from columns 18-21 and take the chain from the segid in columns "
@@ -223,9 +170,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--no-charmm", dest="charmm", action="store_false",
                    help="Disable CHARMM handling even if auto-detected.")
     p.add_argument("--split-on-gaps", action="store_true",
-                   help="Start a new output chain at every residue-numbering gap (v1 behaviour). "
-                        "Off by default because residues are renumbered contiguously anyway, and on "
-                        "large glycoproteins it exhausts the single-character chain-ID alphabet.")
+                   help="Start a new chain at residue-number resets or gaps.")
     p.add_argument("--drop-solvent", action="store_true",
                    help="Remove water and common crystallisation additives "
                         "(HOH, EDO, GOL, SO4, CIT, EPE, TLA, MES, TRS, PEG, ACT, DMS).")
@@ -260,21 +205,35 @@ def parse_range(expr: str, n_atoms: int) -> List[int]:
     return selected
 
 
-def safe_int(s: str, default: int = 0) -> int:
+def required_int(s: str, field: str, line_number: int) -> int:
     try:
         return int(s.strip())
-    except Exception:
-        return default
+    except ValueError as exc:
+        raise SystemExit(
+            f"Invalid {field} at PDB line {line_number}: {s!r}"
+        ) from exc
 
 
-def safe_float(s: str, default: float = 0.0) -> float:
+def required_float(s: str, field: str, line_number: int) -> float:
     try:
         return float(s.strip())
-    except Exception:
+    except ValueError as exc:
+        raise SystemExit(
+            f"Invalid {field} at PDB line {line_number}: {s!r}"
+        ) from exc
+
+
+def optional_float(s: str, default: float, field: str, line_number: int) -> float:
+    if not s.strip():
         return default
+    return required_float(s, field, line_number)
 
 
-def infer_element(atom_name: str, element_field: str = "") -> str:
+def infer_element(
+    atom_name: str,
+    element_field: str = "",
+    resname: str = "",
+) -> str:
     e = element_field.strip().upper()
     if e:
         return e[:2]
@@ -284,7 +243,10 @@ def infer_element(atom_name: str, element_field: str = "") -> str:
     # For names such as 1H5, H5', C1', OP1, CL, NA.
     if name[0].isdigit() and len(name) > 1:
         name = name[1:]
-    # Two-letter ions/elements when atom name is exactly a two-letter element.
+    if resname.strip().upper() in ION_MAP:
+        ion = ION_MAP[resname.strip().upper()]
+        return "CA" if ion == "CAL" else ion[:2]
+    # Common two-letter elements outside protein atom naming.
     up = name.upper()
     if up.startswith("CL"):
         return "CL"
@@ -294,8 +256,6 @@ def infer_element(atom_name: str, element_field: str = "") -> str:
         return "MG"
     if up.startswith("ZN"):
         return "ZN"
-    if up.startswith("CA") and len(up) <= 2:
-        return "CA"
     return up[0]
 
 
@@ -321,87 +281,138 @@ def detect_charmm(path: str) -> bool:
     return wide and not chain_used
 
 
-def parse_pdb(path: str, model: int = 1, keep_all_models: bool = False,
-              keep_altloc: bool = False, drop_solvent: bool = False,
-              charmm: bool = False) -> Tuple[List[AtomRecord], List[str]]:
-    """Read a PDB, keeping one model and one alternate location by default.
-
-    Both filters are applied here rather than after selection so that the -a range
-    refers to the records that actually reach the output. The number of records
-    removed is reported so a mismatch with an existing ATOMS= list is obvious.
-    """
-    atoms: List[AtomRecord] = []
+def parse_pdb(
+    path: str,
+    model: int = 1,
+    drop_solvent: bool = False,
+    charmm: bool = False,
+) -> Tuple[List[AtomRecord], List[str]]:
+    """Read one model and select one coordinate for each alternate location."""
+    provisional: List[AtomRecord] = []
     notes: List[str] = []
     ter_pending = False
-    cur_model = 0
+    current_model: Optional[int] = None
+    model_records_seen = False
+    target_model_seen = False
+    model_sequence = 0
     n_model_skipped = 0
-    n_altloc_skipped = 0
     n_solvent_skipped = 0
-    seen_altloc = {}
-    with open(path, 'r', encoding='utf-8', errors='replace') as fh:
-        for line in fh:
+
+    with open(path, "r", encoding="utf-8", errors="replace") as fh:
+        for line_number, line in enumerate(fh, start=1):
             rec = line[:6].strip()
             if rec == "MODEL":
-                cur_model += 1
+                model_records_seen = True
+                model_sequence += 1
+                fields = line[6:].split()
+                current_model = int(fields[0]) if fields and fields[0].isdigit() else model_sequence
+                if current_model == model:
+                    target_model_seen = True
+                ter_pending = False
                 continue
             if rec == "ENDMDL":
+                current_model = None
+                ter_pending = False
                 continue
             if rec == "TER":
-                ter_pending = True
+                if not model_records_seen or current_model == model:
+                    ter_pending = True
                 continue
             if rec not in {"ATOM", "HETATM"}:
                 continue
-            if not keep_all_models and cur_model and cur_model != model:
+            if model_records_seen and current_model != model:
                 n_model_skipped += 1
                 continue
-            alt = line[16:17].strip()
-            # CHARMM-GUI puts a four-character residue name in columns 18-21
-            resn = (line[17:21] if charmm else line[17:20]).strip()
-            if drop_solvent and resn.upper() in SOLVENT_AND_ADDITIVES:
+
+            padded = line.rstrip("\n").ljust(80)
+            resn = (padded[17:21] if charmm else padded[17:20]).strip().upper()
+            if drop_solvent and resn in SOLVENT_AND_ADDITIVES:
                 n_solvent_skipped += 1
                 continue
-            if not keep_altloc and alt:
-                key = (line[21:22], line[22:27], line[12:16].strip())
-                if key in seen_altloc:
-                    n_altloc_skipped += 1
-                    continue
-                seen_altloc[key] = alt
-            padded = line.rstrip('\n')
-            padded = padded + " " * max(0, 80 - len(padded))
+
             atom_name = padded[12:16].strip()
-            element = padded[76:78].strip()
             atom = AtomRecord(
                 record=rec,
-                input_atom_index=len(atoms) + 1,
-                input_serial=safe_int(padded[6:11], len(atoms) + 1),
+                input_atom_index=0,
+                input_serial=required_int(padded[6:11], "atom serial", line_number),
                 atom_name=atom_name,
                 altloc=padded[16:17].strip(),
                 resname_orig=resn,
                 chain_orig=padded[21:22].strip(),
-                resseq_orig=safe_int(padded[22:26], 0),
+                resseq_orig=required_int(padded[22:26], "residue number", line_number),
                 icode_orig=padded[26:27].strip(),
-                x=safe_float(padded[30:38]),
-                y=safe_float(padded[38:46]),
-                z=safe_float(padded[46:54]),
-                occ=safe_float(padded[54:60], 1.0),
-                bfac=safe_float(padded[60:66], 0.0),
+                x=required_float(padded[30:38], "x coordinate", line_number),
+                y=required_float(padded[38:46], "y coordinate", line_number),
+                z=required_float(padded[46:54], "z coordinate", line_number),
+                occ=optional_float(padded[54:60], 1.0, "occupancy", line_number),
+                bfac=optional_float(padded[60:66], 0.0, "B factor", line_number),
                 segid=padded[72:76].strip(),
-                element=infer_element(atom_name, element),
+                element=infer_element(atom_name, padded[76:78], resn),
                 charge=padded[78:80].strip(),
+                line_number=line_number,
                 ter_before=ter_pending,
             )
-            atoms.append(atom)
+            provisional.append(atom)
             ter_pending = False
-    if n_model_skipped:
-        notes.append(f"MODEL filter: kept model {model}, dropped {n_model_skipped} records from "
-                     f"other models. NOTE: -a ranges refer to the order AFTER filtering.")
-    if n_altloc_skipped:
-        notes.append(f"altLoc filter: dropped {n_altloc_skipped} duplicate alternate-location "
-                     f"records. NOTE: -a ranges refer to the order AFTER filtering.")
-    if n_solvent_skipped:
-        notes.append(f"Solvent filter: dropped {n_solvent_skipped} water/additive records.")
-    return atoms, notes
 
+    if model_records_seen and not target_model_seen:
+        raise SystemExit(f"MODEL {model} was not found in {path}")
+    if n_model_skipped:
+        notes.append(
+            f"MODEL filter: kept MODEL {model}; dropped {n_model_skipped} atom records."
+        )
+    if n_solvent_skipped:
+        notes.append(f"Solvent filter: dropped {n_solvent_skipped} atom records.")
+
+    groups = {}
+    for order, atom in enumerate(provisional):
+        key = (
+            atom.chain_orig,
+            atom.segid,
+            atom.resseq_orig,
+            atom.icode_orig,
+            atom.resname_orig,
+            atom.atom_name,
+        )
+        groups.setdefault(key, []).append((order, atom))
+
+    chosen_orders = set()
+    replacements = {}
+    for entries in groups.values():
+        anchor_order = entries[0][0]
+        blank = [entry for entry in entries if not entry[1].altloc]
+        candidates = blank or entries
+        chosen = min(
+            candidates,
+            key=lambda entry: (
+                -entry[1].occ,
+                0 if entry[1].altloc == "A" else 1,
+                entry[0],
+            ),
+        )
+        chosen_orders.add(anchor_order)
+        replacements[anchor_order] = replace(
+            chosen[1],
+            altloc="",
+            ter_before=any(atom.ter_before for _, atom in entries),
+        )
+
+    atoms: List[AtomRecord] = []
+    for order, atom in enumerate(provisional):
+        if order not in chosen_orders:
+            continue
+        atoms.append(
+            replace(replacements[order], input_atom_index=len(atoms) + 1)
+        )
+
+    n_altloc_skipped = len(provisional) - len(atoms)
+    if n_altloc_skipped:
+        notes.append(
+            f"altLoc filter: selected one coordinate per atom; dropped {n_altloc_skipped} records."
+        )
+    if notes:
+        notes.append("The -a range is applied after MODEL, altLoc and solvent filtering.")
+    return atoms, notes
 
 def normalize_atom_name(name: str) -> str:
     # SAXS.cpp recognizes apostrophe names.
@@ -421,17 +432,7 @@ def is_rna_resname_out(resname_out: str) -> bool:
 
 
 def normalize_atom_name_for_residue(name: str, resname_out: str) -> str:
-    """Return a SAXS.cpp-compatible atom name for a given output residue name.
-
-    CHARMM RNA commonly uses:
-      H2'' for the C2' hydrogen
-      H2'  for the O2' hydroxyl hydrogen
-
-    In SAXS.cpp RNA ONEBEAD, H2'' is not accepted for RNA residues. The C2' hydrogen
-    must be named H2', while the hydroxyl hydrogen can be HO2', HO'2 or H2'1.
-    Therefore, for RNA only, map H2'' -> H2' and H2' -> HO2'. DNA residues are left
-    unchanged because SAXS.cpp accepts H2'' for DNA.
-    """
+    """Normalize residue-dependent atom names."""
     n = normalize_atom_name(name)
     if is_rna_resname_out(resname_out):
         if n == "H2''":
@@ -443,8 +444,11 @@ def normalize_atom_name_for_residue(name: str, resname_out: str) -> str:
 
 def base_resname(resname: str) -> str:
     r = resname.strip().upper()
-    # Remove common CHARMM terminal prefixes/suffixes without losing explicit PLUMED suffixes.
     r = r.replace("5'", "").replace("3'", "")
+    if re.fullmatch(r"[ACGU][35T]", r):
+        return r[0]
+    if re.fullmatch(r"D[ACGT][35T]", r):
+        return r[:2]
     if r in RNA_MAP:
         return RNA_MAP[r]
     if r in DNA_MAP:
@@ -508,6 +512,15 @@ def residue_atom_names(res_atoms: Sequence[AtomRecord]) -> set:
     return {normalize_atom_name(a.atom_name) for a in res_atoms}
 
 
+def existing_terminal_suffix(resname: str) -> str:
+    r = resname.strip().upper()
+    if re.fullmatch(r"[ACGU][35T]", r):
+        return r[-1]
+    if re.fullmatch(r"D[ACGT][35T]", r):
+        return r[-1]
+    return ""
+
+
 def terminal_suffix(base: str, atom_names: set, is_first_in_chain: bool, is_last_in_chain: bool) -> str:
     if not (is_rna_base(base) or is_dna_base(base)):
         return ""
@@ -524,51 +537,52 @@ def terminal_suffix(base: str, atom_names: set, is_first_in_chain: bool, is_last
     return ""
 
 
-SPLIT_ON_NUMBERING_GAPS = False
-
-def split_into_chains(residues: Sequence[Sequence[AtomRecord]]) -> List[List[List[AtomRecord]]]:
+def split_into_chains(
+    residues: Sequence[Sequence[AtomRecord]],
+    split_on_gaps: bool = False,
+) -> List[List[List[AtomRecord]]]:
     chains: List[List[List[AtomRecord]]] = []
     current: List[List[AtomRecord]] = []
     prev_first: Optional[AtomRecord] = None
-    for res in residues:
-        first = res[0]
-        new_chain = False
-        if not current:
-            new_chain = True
-        else:
-            assert prev_first is not None
-            # Explicit TER before this residue.
-            if first.ter_before:
+
+    for residue in residues:
+        first = residue[0]
+        source_id = (first.chain_orig, first.segid)
+        previous_id = (
+            (prev_first.chain_orig, prev_first.segid)
+            if prev_first is not None else source_id
+        )
+        new_chain = not current
+        if current and prev_first is not None:
+            if first.ter_before or source_id != previous_id:
                 new_chain = True
-            # Explicit original chain or segid change.
-            elif first.chain_orig and prev_first.chain_orig and first.chain_orig != prev_first.chain_orig:
+            elif split_on_gaps and first.resseq_orig != prev_first.resseq_orig + 1:
                 new_chain = True
-            elif first.segid and prev_first.segid and first.segid != prev_first.segid:
-                new_chain = True
-            # Residue numbering reset or gap. Output residues are renumbered
-            # contiguously below, so a gap in the input cannot reach PLUMED and does
-            # not by itself require a new chain. Set SPLIT_ON_NUMBERING_GAPS to
-            # restore the previous behaviour.
-            elif SPLIT_ON_NUMBERING_GAPS and first.resseq_orig <= prev_first.resseq_orig:
-                new_chain = True
-            elif SPLIT_ON_NUMBERING_GAPS and first.resseq_orig > prev_first.resseq_orig + 1:
-                new_chain = True
+
         if new_chain:
             if current:
                 chains.append(current)
-            current = [list(res)]
+            current = [list(residue)]
         else:
-            current.append(list(res))
+            current.append(list(residue))
         prev_first = first
+
     if current:
         chains.append(current)
     return chains
 
 
-def convert_atoms(atoms: List[AtomRecord]) -> Tuple[List[AtomRecord], List[str]]:
+def convert_atoms(
+    atoms: List[AtomRecord],
+    split_on_gaps: bool = False,
+) -> Tuple[List[AtomRecord], List[str]]:
+    if not atoms:
+        raise SystemExit("The atom selection is empty.")
+
     log: List[str] = []
+    errors: List[str] = []
     residues = group_residues(atoms)
-    chains = split_into_chains(residues)
+    chains = split_into_chains(residues, split_on_gaps=split_on_gaps)
     used_chains = set()
     converted: List[AtomRecord] = []
     log.append(f"Input selected atoms: {len(atoms)}")
@@ -582,74 +596,131 @@ def convert_atoms(atoms: List[AtomRecord]) -> Tuple[List[AtomRecord], List[str]]
             chain_id = next_chain_id(used_chains)
         else:
             used_chains.add(chain_id)
-        log.append(f"Chain {chain_idx}: output chain ID {chain_id!r}; residues={len(chain_residues)}; atoms={sum(len(r) for r in chain_residues)}; source first res={first_atom.resname_orig}{first_atom.resseq_orig} segid={first_atom.segid!r}")
 
-        for r_idx, res_atoms in enumerate(chain_residues, start=1):
+        atom_count = sum(len(residue) for residue in chain_residues)
+        log.append(
+            f"Chain {chain_idx}: ID {chain_id}; residues={len(chain_residues)}; "
+            f"atoms={atom_count}."
+        )
+        if len(chain_residues) > 9999:
+            errors.append(f"Chain {chain_id} has more than 9999 residues.")
+
+        for residue_index, res_atoms in enumerate(chain_residues, start=1):
             orig = res_atoms[0]
             base = base_resname(orig.resname_orig)
             names = residue_atom_names(res_atoms)
-            suffix = terminal_suffix(base, names, r_idx == 1, r_idx == len(chain_residues))
-            resname_out = base + suffix if (is_rna_base(base) or is_dna_base(base)) else base
-            # glycosylation-site residues carry the bead of their parent amino acid
+            is_first = residue_index == 1
+            is_last = residue_index == len(chain_residues)
+
+            if base in UNSUPPORTED_SITE_NAMES:
+                errors.append(
+                    f"Unsupported glycosylation-site residue {base} at "
+                    f"chain {chain_id}, input residue {orig.resseq_orig}."
+                )
+                continue
+
             if base in GLYCOSYLATION_SITE_MAP:
                 parent = GLYCOSYLATION_SITE_MAP[base]
-                log.append(f"Glycosylation site: chain {chain_id} residue {base}{orig.resseq_orig}"
-                           f" -> {parent}.")
-                if parent == "PRO":
-                    log.append(f"WARNING residue {base}{orig.resseq_orig}: hydroxyproline is not "
-                               f"parameterised by the ONEBEAD model; PRO is only an approximation.")
-                resname_out = parent
+                log.append(
+                    f"Glycosylation site: {base}{orig.resseq_orig} -> {parent}."
+                )
                 base = parent
-            glyc_out = canonical_glycan(base, names)
-            if glyc_out is not None:
-                if glyc_out != base:
-                    log.append(f"Glycan: chain {chain_id} residue {orig.resname_orig}"
-                               f"{orig.resseq_orig} -> {glyc_out}"
-                               + (" (N-acetyl group detected)" if glyc_out in ("NAG", "NGA")
-                                  and base not in ("NAG", "NGA") else ""))
-                resname_out = glyc_out
+
+            glycan = canonical_glycan(base, names)
+            ion = ION_MAP.get(base)
+            suffix = existing_terminal_suffix(orig.resname_orig) or terminal_suffix(
+                base, names, is_first, is_last
+            )
+
+            if glycan is not None:
+                resname_out = glycan
+                if glycan != base:
+                    log.append(
+                        f"Glycan: {orig.resname_orig}{orig.resseq_orig} -> {glycan}."
+                    )
             elif base in GLYCAN_UNSUPPORTED:
-                log.append(f"WARNING residue {base}{orig.resseq_orig} chain {chain_id}: recognised "
-                           f"monosaccharide with no ONEBEAD parameters. Remove it or exclude it "
-                           f"from ATOMS=.")
-            # duplicate atom names inside a residue break the bead sums
-            dup = sorted({n for n in [a.atom_name.strip() for a in res_atoms]
-                          if [a.atom_name.strip() for a in res_atoms].count(n) > 1})
-            if dup:
-                log.append(f"WARNING residue {orig.resname_orig}{orig.resseq_orig} chain {chain_id}:"
-                           f" duplicate atom names {','.join(dup)}. PLUMED will reject this.")
-            if resname_out == orig.resname_orig.strip():
-                log_res_conversion = "kept"
-            else:
-                log_res_conversion = f"{orig.resname_orig.strip()} -> {resname_out}"
-            if is_nucleic_base_name(orig.resname_orig):
-                unknown = sorted(n for n in names if n not in KNOWN_ONEBEAD_NUC_ATOMS)
+                errors.append(
+                    f"Monosaccharide {base} at chain {chain_id}, input residue "
+                    f"{orig.resseq_orig} has no ONEBEAD parameters."
+                )
+                continue
+            elif ion is not None:
+                if len(res_atoms) != 1:
+                    errors.append(
+                        f"Ion residue {base}{orig.resseq_orig} contains "
+                        f"{len(res_atoms)} atoms; ONEBEAD expects one atom."
+                    )
+                    continue
+                resname_out = ion
+            elif is_rna_base(base) or is_dna_base(base):
+                resname_out = base + suffix
+                unknown = sorted(name for name in names if name not in KNOWN_ONEBEAD_NUC_ATOMS)
                 if unknown:
-                    log.append(f"WARNING residue {orig.resname_orig}{orig.resseq_orig} chain {chain_id}: atom names not recognized by SAXS.cpp ONEBEAD nucleic-acid mapping: {','.join(unknown)}")
-            elif (base not in PROTEIN_NAMES and base not in PASS_THROUGH_RESNAMES
-                  and glyc_out is None and base not in GLYCAN_UNSUPPORTED):
-                log.append(f"WARNING residue {orig.resname_orig}{orig.resseq_orig} chain {chain_id}: residue name after conversion is {base!r}; check SAXS.cpp support if selected.")
-            if suffix:
-                log.append(f"Terminal inference: chain {chain_id} residue input {orig.resname_orig}{orig.resseq_orig} -> {resname_out} ({'first' if r_idx == 1 else 'last'} residue).")
-            elif log_res_conversion != "kept":
-                log.append(f"Residue conversion: chain {chain_id} residue input {orig.resname_orig}{orig.resseq_orig} -> {resname_out}.")
+                    errors.append(
+                        f"Unknown nucleic-acid atom names in {orig.resname_orig}"
+                        f"{orig.resseq_orig}: {','.join(unknown)}."
+                    )
+                    continue
+                if suffix:
+                    log.append(
+                        f"Terminal residue: {orig.resname_orig}{orig.resseq_orig} "
+                        f"-> {resname_out}."
+                    )
+            elif base in PROTEIN_NAMES:
+                resname_out = base
+            else:
+                errors.append(
+                    f"Unsupported residue {orig.resname_orig} at chain {chain_id}, "
+                    f"input residue {orig.resseq_orig}."
+                )
+                continue
 
-            for a in res_atoms:
-                if glyc_out is not None:
-                    atom_out = normalize_glycan_atom_name(a.atom_name, resname_out)
+            output_names = []
+            for atom in res_atoms:
+                if glycan is not None:
+                    atom_out = normalize_glycan_atom_name(atom.atom_name, resname_out)
                 else:
-                    atom_out = normalize_atom_name_for_residue(a.atom_name, resname_out)
-                if atom_out != normalize_atom_name(a.atom_name):
-                    log.append(f"Atom-name conversion: chain {chain_id} residue input {orig.resname_orig}{orig.resseq_orig} output {resname_out}{r_idx}: {normalize_atom_name(a.atom_name)} -> {atom_out}.")
-                converted.append(replace(
-                    a,
-                    chain_out=chain_id,
-                    resseq_out=r_idx,
-                    resname_out=resname_out,
-                    atom_name_out=atom_out,
-                ))
-    return converted, log
+                    atom_out = normalize_atom_name_for_residue(atom.atom_name, resname_out)
+                output_names.append(atom_out)
 
+            duplicates = sorted(
+                name for name, count in Counter(output_names).items() if count > 1
+            )
+            if duplicates:
+                errors.append(
+                    f"Duplicate output atom names in {resname_out}{residue_index} "
+                    f"chain {chain_id}: {','.join(duplicates)}."
+                )
+                continue
+
+            for atom, atom_out in zip(res_atoms, output_names):
+                if len(atom_out) > 4:
+                    errors.append(
+                        f"Atom name {atom_out!r} exceeds four PDB columns at input "
+                        f"line {atom.line_number}."
+                    )
+                    continue
+                if atom_out != normalize_atom_name(atom.atom_name):
+                    log.append(
+                        f"Atom name: {normalize_atom_name(atom.atom_name)} -> {atom_out} "
+                        f"in {resname_out}{residue_index}."
+                    )
+                converted.append(
+                    replace(
+                        atom,
+                        chain_out=chain_id,
+                        resseq_out=residue_index,
+                        resname_out=resname_out,
+                        atom_name_out=atom_out,
+                    )
+                )
+
+    if errors:
+        details = "\n".join(f"- {error}" for error in errors)
+        raise SystemExit(f"Conversion stopped:\n{details}")
+    if len(converted) > 99999:
+        raise SystemExit("The output contains more than 99999 atoms and cannot fit PDB columns.")
+    return converted, log
 
 def format_atom_name(name: str, element: str) -> str:
     n = name.strip()
@@ -666,13 +737,23 @@ def format_pdb_atom(a: AtomRecord, out_serial: int) -> str:
     atom_field = format_atom_name(a.atom_name_out, a.element)
     res_field = f"{a.resname_out:>3}"[-3:]
     chain = (a.chain_out or "A")[:1]
-    element = (a.element or infer_element(a.atom_name_out)).upper()[:2]
+    element = (
+        a.element or infer_element(a.atom_name_out, resname=a.resname_out)
+    ).upper()[:2]
     # Keep segid in columns 73-76 when available; otherwise use chain-friendly placeholder.
     segid = (a.segid or ("RNA" + chain if is_nucleic_base_name(a.resname_out) else chain))[:4]
-    return (f"{rec:<6}{out_serial:5d} {atom_field}{a.altloc[:1]:1s}{res_field:>3s} {chain:1s}"
-            f"{a.resseq_out:4d}{a.icode_orig[:1]:1s}   "
-            f"{a.x:8.3f}{a.y:8.3f}{a.z:8.3f}{a.occ:6.2f}{a.bfac:6.2f}"
-            f"      {segid:<4s}{element:>2s}{a.charge:>2s}")
+    line = (
+        f"{rec:<6}{out_serial:5d} {atom_field}{a.altloc[:1]:1s}"
+        f"{res_field:>3s} {chain:1s}{a.resseq_out:4d}{a.icode_orig[:1]:1s}   "
+        f"{a.x:8.3f}{a.y:8.3f}{a.z:8.3f}{a.occ:6.2f}{a.bfac:6.2f}"
+        f"      {segid:<4s}{element:>2s}{a.charge:>2s}"
+    )
+    if len(line) != 80:
+        raise SystemExit(
+            f"PDB field overflow for output atom {out_serial} "
+            f"({a.resname_out}{a.resseq_out}/{a.atom_name_out})."
+        )
+    return line
 
 
 def format_ter(serial: int, last_atom: AtomRecord) -> str:
@@ -680,8 +761,15 @@ def format_ter(serial: int, last_atom: AtomRecord) -> str:
 
 
 def write_pdb(atoms: List[AtomRecord], path: str) -> None:
+    if not atoms:
+        raise SystemExit("Cannot write an empty PDB template.")
+    for atom in atoms:
+        if len(atom.resname_out) > 3:
+            raise SystemExit(f"Residue name {atom.resname_out!r} exceeds three PDB columns.")
+        if len(atom.charge) > 2:
+            raise SystemExit(f"Charge field {atom.charge!r} exceeds two PDB columns.")
     with open(path, 'w', encoding='utf-8') as out:
-        out.write("REMARK Prepared by pdb2plmd.py for PLUMED SAXS.cpp ONEBEAD\n")
+        out.write("REMARK Prepared by pdb2plmd\n")
         out.write("REMARK Atom order preserved from selected ATOM/HETATM input order\n")
         prev_atom = None
         for i, a in enumerate(atoms, start=1):
@@ -698,8 +786,8 @@ def write_log(log_path: Optional[str], args: argparse.Namespace, all_atoms: List
     if not log_path:
         return
     with open(log_path, 'w', encoding='utf-8') as log:
-        log.write("pdb2plmd.py verbose log\n")
-        log.write("================================\n")
+        log.write("pdb2plmd verbose log\n")
+        log.write("=======================\n")
         log.write(f"Input:  {args.input}\n")
         log.write(f"Output: {args.output}\n")
         log.write(f"Atom range expression: {args.atoms}\n")
@@ -709,7 +797,8 @@ def write_log(log_path: Optional[str], args: argparse.Namespace, all_atoms: List
             log.write(f"Selected input atom-order range: {selected_indices[0]}..{selected_indices[-1]}\n")
         log.write("\n")
         log.write("Notes:\n")
-        log.write("- The -a range refers to input ATOM/HETATM order, not PDB serial.\n")
+        log.write("- The -a range is applied after MODEL, altLoc and solvent filtering.\n")
+        log.write("- It refers to ATOM/HETATM order, not PDB serial.\n")
         log.write("- Output atom order is identical to the selected input atom order.\n")
         log.write("- Output atom serials are renumbered sequentially; this does not change PLUMED atom order.\n")
         log.write("- Residues are renumbered sequentially within each output chain to avoid PLUMED residue-range gaps.\n")
@@ -729,15 +818,15 @@ def main() -> None:
     if args.log == "__AUTO__":
         args.log = args.output + ".log"
 
-    global SPLIT_ON_NUMBERING_GAPS
-    SPLIT_ON_NUMBERING_GAPS = args.split_on_gaps
     use_charmm = detect_charmm(args.input) if args.charmm is None else args.charmm
     if use_charmm:
         print("CHARMM input detected: reading the four-character residue name from columns 18-21.")
-    all_atoms, parse_notes = parse_pdb(args.input, model=args.model, charmm=use_charmm,
-                                      keep_all_models=args.keep_all_models,
-                                      keep_altloc=args.keep_altloc,
-                                      drop_solvent=args.drop_solvent)
+    all_atoms, parse_notes = parse_pdb(
+        args.input,
+        model=args.model,
+        charmm=use_charmm,
+        drop_solvent=args.drop_solvent,
+    )
     for n in parse_notes:
         print(n)
     if not all_atoms:
@@ -745,18 +834,28 @@ def main() -> None:
     selected_indices = parse_range(args.atoms, len(all_atoms))
     index_set = set(selected_indices)
     selected_atoms = [a for a in all_atoms if a.input_atom_index in index_set]
+    if not selected_atoms:
+        raise SystemExit("The atom selection is empty.")
 
-    # Preserve original atom order, regardless of range expression order.
-    converted, log_lines = convert_atoms(selected_atoms)
+    converted, log_lines = convert_atoms(
+        selected_atoms,
+        split_on_gaps=args.split_on_gaps,
+    )
     log_lines = parse_notes + log_lines
-    # The ONEBEAD form factors were parameterised on all-atom structures: the bead
-    # includes its hydrogens. A crystal structure without them gives systematically
-    # wrong intensities, so this is checked rather than left to chance.
+    if any(
+        not math.isfinite(value)
+        for atom in converted
+        for value in (atom.x, atom.y, atom.z, atom.occ, atom.bfac)
+    ):
+        raise SystemExit("The selected atoms contain non-finite numeric values.")
+
     n_h = sum(1 for a in converted if a.element == "H")
     if converted and n_h < 0.2 * len(converted):
-        msg = (f"WARNING only {n_h}/{len(converted)} atoms are hydrogens "
-               f"({100.0 * n_h / len(converted):.1f}%). ONEBEAD form factors assume an all-atom "
-               f"structure; add hydrogens before using this template.")
+        msg = (
+            f"WARNING only {n_h}/{len(converted)} atoms are hydrogens "
+            f"({100.0 * n_h / len(converted):.1f}%). The ONEBEAD template is "
+            f"expected to be all-atom."
+        )
         print(msg)
         log_lines.append(msg)
     write_pdb(converted, args.output)
