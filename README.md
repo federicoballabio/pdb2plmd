@@ -1,29 +1,25 @@
 # pdb2plmd
 
-Prepare an ordered PDB template for PLUMED calculations.
-
-PLUMED maps the atoms in `ATOMS` to the atoms in `TEMPLATE` by order. The
-converter therefore preserves the selected `ATOM`/`HETATM` order while
-normalizing residue, atom and chain names required by ONEBEAD.
+Prepare and validate an ordered PDB template for PLUMED `SAXS ONEBEAD` calculations.
 
 ## Main features
 
-- Preserves the selected `ATOM`/`HETATM` order.
-- Renumbers output atom serials from 1.
-- Assigns chain IDs if missing and can infer them from CHARMM-GUI segment IDs.
-- Detects CHARMM four-character residue names and reads them from columns 18-21.
-- Inserts `TER` records and renumbers residues sequentially within each chain.
-- Converts supported glycosylation-site, glycan, ion, RNA and DNA names.
-- Adds RNA/DNA terminal suffixes when detectable.
-- Resolves alternate locations at residue level. Default `--altloc auto` selects one coherent conformer by completeness, then occupancy; `--altloc A/B/...` can force one label globally.
-- Reports incompatible residues or moieties with concise, actionable errors.
-- Rejects `-a`/`-s` selections that keep only part of a residue or multi-atom moiety, and warns when the template appears not to be all-atom.
-- Embeds the converter version in the PDB and exposes it with `--version`.
-- Uses a two-mode file interface: standard success writes only the PDB; `-v` success writes PDB + log; any conversion error writes an error log.
+- Preserves selected `ATOM`/`HETATM` order and coordinates.
+- Renumbers output atom serials from 1 and residues sequentially within each chain.
+- Preserves PDB chain IDs and can recover CHARMM-GUI chains from SEGID fields.
+- Resolves alternate locations at residue level.
+- Supports proteins, RNA, DNA, the validated glycan classes and the ion set implemented by the current `SAXS.cpp`.
+- Converts supported CHARMM, AMBER, GLYCAM and force-field-qualified GROMACS nomenclatures.
+- Separates successful mapping from quantitative ONEBEAD SAXS readiness.
+- Accepts heavy-atom-complete structures without explicit hydrogens with a warning.
+- Flags missing required heavy atoms as not SAXS-ready and rejects unsupported chemical states and incomplete multi-atom selections.
+- Writes concise diagnostics and an error log when conversion fails.
 
 ## Requirements
 
 Python 3.8 or newer. No external Python packages are required.
+
+Keep `pdb2plmd.py` and the `src` folder together.
 
 ## Usage
 
@@ -31,226 +27,181 @@ Python 3.8 or newer. No external Python packages are required.
 python3 pdb2plmd.py -i input.pdb -o template_saxs.pdb
 ```
 
-Select atoms by filtered `ATOM`/`HETATM` order:
+For a source convention that should not be guessed automatically, specify it explicitly:
 
 ```bash
-python3 pdb2plmd.py -i input.pdb -o template_saxs.pdb -a 1-1062
-python3 pdb2plmd.py -i input.pdb -o template_saxs.pdb -a 1-100,150,200-250
+python3 pdb2plmd.py -i input.pdb -o template_saxs.pdb --input-convention amber -v
 ```
 
-Select by the PDB atom-serial field instead:
-
-```bash
-python3 pdb2plmd.py -i input.pdb -o template_saxs.pdb -s 1-1069
-```
-
-Verbose run:
-
-```bash
-python3 pdb2plmd.py -i input.pdb -o template_saxs.pdb -v
-```
-
-Check the exact converter version:
+Check the exact converter version with:
 
 ```bash
 python3 pdb2plmd.py --version
-# pdb2plmd v26080804
 ```
 
-For `template_saxs.pdb`, the automatic log name is `template_saxs.log`.
+Current version:
+
+```text
+pdb2plmd v2609061930
+```
 
 ## Options
 
 ```text
 -i, --input          Input PDB file.
 -o, --output         Output PDB file.
--a, --atoms          Select by 1-based ATOM/HETATM record order. Default: all.
--s, --serials        Select by the PDB atom-serial field. Mutually exclusive with -a.
---model              MODEL serial to keep. Default: 1.
+-a, --atoms          Select by 1-based ATOM/HETATM record order.
+-s, --serials        Select by the PDB atom-serial field.
+--model              MODEL serial to keep. Default: first MODEL.
+--input-convention   Source nomenclature convention.
 --split-on-gaps      Split chains at residue-number resets or gaps.
--altloc, --altloc    Select alternate locations. Default: auto.
---drop-solvent       Remove water and common crystallisation additives, including EOH ethanol.
--v, --verbose        On success write a verbose log in addition to the PDB.
---version             Print the exact pdb2plmd version and exit.
+-altloc, --altloc    Alternate-location handling. Default: auto.
+--drop-solvent       Remove water and common crystallisation additives.
+-v, --verbose        Print detailed terminal status and write a log on success.
+--version            Print the exact converter version.
 ```
+
+Accepted source-convention values are:
+
+```text
+auto
+generic
+charmm
+amber
+gromacs-amber
+gromacs-charmm
+gromacs-oplsaa
+gromacs-gromos
+glycam
+```
+
+`auto` uses conservative PDB signatures and resolves a source convention only when the evidence is unambiguous. It can recognize CHARMM/CHARMM-GUI layouts, distinctive AMBER residue forms, strong or multiple GLYCAM residue/atom signatures, and selected force-field-qualified GROMACS signatures. A single ambiguous residue-name match is not sufficient. If GROMACS-style naming is detected but the force-field family cannot be distinguished safely, conversion stops and asks for an explicit `--input-convention`. GROMOS united-atom input without a distinctive source signature should also be selected explicitly.
 
 ## Atom order and selection
 
-`-a` selects by 1-based `ATOM`/`HETATM` record order after MODEL, alternate-location resolution and optional solvent filtering. TER and other non-coordinate records are not counted.
+`-a` selects by 1-based `ATOM`/`HETATM` record order after MODEL, alternate-location and optional solvent handling. `TER` and other non-coordinate records are not counted.
 
-`-s` selects by the PDB atom-serial field. This is convenient when the desired boundary is known from the PDB itself; TER serials are naturally skipped. If selected coordinate records contain repeated or wrapped PDB serials, `-s` stops with an error and `-a` should be used instead. `-a` and `-s` are mutually exclusive.
+`-s` selects by the PDB atom-serial field. Use `-a` for files with repeated or wrapped atom serials. `-a` and `-s` are mutually exclusive.
 
-The script does not sort atoms. The output `TEMPLATE` keeps the selected input atom order. A selection that cuts through a residue or multi-atom moiety is rejected before conversion.
+The converter does not sort atoms. A selection that cuts through a residue or multi-atom moiety is rejected.
 
 ## Alternate locations
 
-By default, `--altloc auto` resolves alternate coordinates once per residue. Blank-altLoc atoms are retained as common atoms. For each residue with alternate coordinates, the converter chooses one nonblank label using this deterministic order:
+By default, `--altloc auto` selects one coherent nonblank alternate-location label per residue using completeness first and occupancy second. Blank-altLoc atoms are retained as common atoms. The output altLoc field is blank.
 
-1. most complete residue;
-2. highest summed occupancy when completeness is equal;
-3. label `A` on an exact tie;
-4. lexical label order as the final tie-break.
+A label can be forced globally with `--altloc A`, `--altloc B` or another label. If the requested label is unavailable for a residue with alternate coordinates, conversion stops.
 
-The converter never mixes atoms from different nonblank altLoc labels in one output residue. The output altLoc column is blank because the converted PDB represents one resolved structure.
+## Compatibility levels
 
-A label can be forced globally, for example:
-
-```bash
-python3 pdb2plmd.py -i input.pdb -o template.pdb --altloc B
-```
-
-`-altloc B` is accepted as an alias. If a residue has alternate coordinates but the requested label is unavailable, conversion stops instead of silently falling back to another conformer.
-
-## Compatibility diagnostics
-
-Known incompatible residues and moieties stop the conversion before the output
-PDB is written. Fatal checks include:
-
-- unsupported or unknown residue names;
-- monosaccharides without ONEBEAD parameters;
-- GLYCAM terminal caps;
-- `OLP` hydroxyproline;
-- supported glycans carrying unexpected elements, indicating an unsupported
-  substituted moiety;
-- ion residues containing more than one atom;
-- unsupported nucleic-acid atom names;
-- duplicate atom names after normalization;
-- PDB field overflows.
-
-Repeated failures are grouped by issue and residue name. At most 20 issue groups
-are printed, followed by relevant hints. An RCSB structure containing many
-waters therefore produces one grouped water error rather than hundreds of
-nearly identical lines.
-
-Warnings do not stop conversion. They are printed to standard error and copied
-to the verbose log when `-v` is used. The converter checks the residue/moiety rules implemented
-here; the installed `SAXS.cpp` remains the final authority for exact ONEBEAD and
-LCPO compatibility.
-
-## Solvent and crystallisation additives
-
-`--drop-solvent` removes the implemented water/additive residue names before compatibility checks. `EOH` is included as ethanol. `EOH` is not given a ONEBEAD mapping: without `--drop-solvent`, it is reported as an unsupported solvent/additive and conversion stops.
-
-## Glycans
-
-Glycans are kept as one residue per monosaccharide. Common PDB and force-field
-names are converted as follows:
+Verbose output reports:
 
 ```text
-GLC, BGC, AGLC, BGLC        -> GLC or NAG when an amide nitrogen is present
-GAL, GLA, AGAL, BGAL        -> GAL or NGA when an amide nitrogen is present
-MAN, AMAN                   -> MAN
-BMA, BMAN                   -> BMA
-FUC, FUL, FCA, FCB          -> FUC
-AFUC, BFUC                  -> FUC
-NAG, NDG, AGLCNA, BGLCNA   -> NAG
-NGA, A2G, AGALNA, BGALNA   -> NGA
-SIA, SLB, ANE5AC, BNE5AC   -> SIA
+PDB_PARSEABLE
+MOLINFO_COMPATIBLE
+ONEBEAD_MAPPABLE
+ONEBEAD_SAXS_READY
 ```
 
-CHARMM writes six-character names that the PDB format truncates to four, so
-`BGLCNA` arrives as `BGLC` and `AGLCNA` as `AGLC`. These are indistinguishable
-from glucose by name alone and are resolved by the amide nitrogen. The same
-truncation gives `ANE5` and `BNE5` for Neu5Ac; both are accepted.
+A structure can be mappable but not suitable for quantitative ONEBEAD SAXS. In particular, recognized GROMOS united-atom input is deliberately reported as not SAXS-ready because its implicit-hydrogen representation has not been quantitatively validated for the current ONEBEAD model.
 
-Force-field atom names in N-acetyl groups and sialic acid are converted to the
-corresponding PDB chemical-component names. A free reducing-end `O1` is accepted.
+A heavy-atom-complete structure without explicit hydrogens can be reported as `PASS_WITH_WARNING`. Missing required heavy atoms give `ONEBEAD_SAXS_READY=FAIL`.
 
-Monosaccharides without ONEBEAD parameters stop the conversion. These include
-rhamnose, xylose, uronic acids, sulfated sugars, Neu5Gc, pentoses and free
-glucosamine. No chemically similar sugar is substituted automatically.
+## Proteins
 
-GLYCAM terminal capping groups (`ROH`, `OME`, `TBT`) are not monosaccharides and
-have no bead. They are rejected and must be removed before conversion.
+The 20 standard amino acids are supported. Histidine tautomer/protonation names used by the supported source conventions are retained or translated according to the current ONEBEAD state definitions. `HIP`/`HSP` use the protonated-histidine bead and `CYX` uses the disulfide-cysteine bead.
 
-## Junctions
-
-A glycosylation-site residue is renamed to its parent amino acid:
+The accepted SAXS approximations are:
 
 ```text
+GLH -> GLU
+ASH -> ASP
 NLN -> ASN
 OLS -> SER
 OLT -> THR
 ```
 
-This is correct for the implemented ONEBEAD model. All heavy atoms of `NLN`,
-`OLS` and `OLT` are present in `ASN`, `SER` and `THR`, so the LCPO lookup remains
-valid after renaming.
+Unsupported protonation or modification states are not replaced by a chemically similar standard residue.
 
-The glycan bead needs no extra correction. Its parameters were derived from
-glycans simulated while bonded to a `GLY-ASN-GLY` or `ALA-THR-ALA` tripeptide,
-which was removed before the form factor was computed. The reducing
-monosaccharide therefore carries no `O1` in the parameter set, matching its
-state in a glycoprotein.
+## Nucleic acids
 
-On the protein side, one hydrogen attached to `ND2` in ASN, `OG` in SER or `OG1`
-in THR is absent at the junction.
+RNA and DNA are converted to the strict residue and atom vocabulary used by the current ONEBEAD implementation. Supported source translations include CHARMM and AMBER/GROMACS-AMBER aliases, terminal residue forms and legacy atom names.
 
-`OLP` is rejected. Hydroxyproline contains `OD1`, which PRO does not have, so
-renaming it would leave an atom without an LCPO entry.
+Ambiguous older `ADE`, `CYT` and `GUA` names are resolved as RNA or DNA from the presence of `O2'`. `THY` is accepted only for deoxy thymine and `URA` only for ribose uracil.
+
+AMBER monomer building-block names without a dedicated current ONEBEAD state remain unsupported.
+
+## Glycans
+
+The current ONEBEAD glycan classes are:
+
+```text
+FUC
+MAN
+BMA
+GAL
+GLC
+NAG
+NGA
+SIA
+```
+
+Supported CHARMM and common PDB aliases are converted to these targets. Ambiguous glucose- or galactose-derived names are promoted to `NAG` or `NGA` only when the required N-acetyl chemistry is present.
+
+`glycam` mode uses the bundled GLYCAM code table. GLYCAM residue-name case is preserved because it carries stereochemical information. Recognized sugars outside the eight validated ONEBEAD classes are rejected rather than substituted.
 
 ## Ions
 
-Monoatomic ions are converted to the residue names expected by `SAXS.cpp`:
+The converter supports the ion aliases implemented by the current `SAXS.cpp` ion resolver. A monoatomic ion residue must contain exactly one coordinate atom. Recognized ions without a current ONEBEAD parameter are reported explicitly and are not substituted.
+
+## Solvent
+
+`--drop-solvent` removes the implemented water and common crystallisation-additive residue names before compatibility checks. Without this option, unsupported solvent or additive residues stop conversion.
+
+## Output and logs
+
+Without `-v`, a successful conversion writes only the output PDB and reports:
 
 ```text
-NA, SOD, NA+     -> NA
-K, POT, K+       -> K
-CL, CLA, CL-     -> CL
-CA, CAL, CA2+    -> CAL
-MG, MG2+         -> MG
-ZN, ZN2, ZN2+    -> ZN
-FE2              -> FE2
-FE3              -> FE3
-MN, MN2+         -> MN
+pdb2plmd v2609061930: PDB converted.
 ```
 
-Calcium is written as `CAL` rather than `CA` to avoid confusion with the protein
-alpha-carbon atom name. The element field is normalized to the corresponding
-chemical element. An ion residue must contain exactly one atom.
+With `-v`, the same conversion also writes `<output-stem>.log` and reports the output path, atom count, `ONEBEAD_SAXS_READY` status and log path on screen.
 
-`SAXS.cpp` excludes these ions from the SASA calculation.
-
-## Nucleic-acid residue naming
-
-Common RNA names are converted to `A`, `C`, `G` and `U`. Common DNA names are
-converted to `DA`, `DC`, `DG` and `DT`.
-
-Terminal suffixes are added when detectable:
+Without `-v`, a failed conversion reports:
 
 ```text
-A5, C5, G5, U5       5-prime hydroxyl terminal RNA residue
-A3, C3, G3, U3       3-prime hydroxyl terminal RNA residue
-AT, CT, GT, UT       5-prime phosphorylated terminal RNA residue
-DA5, DC5, DG5, DT5   5-prime hydroxyl terminal DNA residue
-DA3, DC3, DG3, DT3   3-prime hydroxyl terminal DNA residue
-DAT, DCT, DGT, DTT   5-prime phosphorylated terminal DNA residue
+pdb2plmd v2609061930: PDB conversion failed.
 ```
 
-For RNA residues, the legacy CHARMM pair `H2''` + `H2'` is converted to the canonical pair `H2'` + `HO2'` only when the residue contains both legacy names and does not already contain `HO2'`. Already-canonical `H2'` + `HO2'` residues are left unchanged. This makes re-conversion idempotent. The rule is not applied to DNA residues.
+An error log is written on failure in both modes. With `-v`, the terminal also shows the first error and the error-log path. No converted PDB is written on failure. Warnings remain visible on standard error when relevant.
 
-## Example
+The output PDB records the exact `pdb2plmd` version used to generate it.
+
+## Examples
+
+`examples/run_examples.py` uses 10 real structures from the Protein Data Bank. The exact PDB files are bundled in `examples/fixtures`. Successful reference outputs are stored in `examples/expected`.
+
+The current set is:
+
+```text
+1CRN  protein
+1UBQ  protein with crystallographic water
+1CLL  calmodulin with calcium and ethanol
+3Q2W  cadherin with glycans and calcium
+1BNA  DNA duplex
+6M0J  glycoprotein complex with NAG, zinc and chloride
+6VSB  SARS-CoV-2 spike with NAG
+1EHZ  tRNA with modified nucleotides
+4HHB  hemoglobin with heme
+4COF  GABAA receptor with benzamidine
+```
+
+Some examples are expected to convert, including structures that remain `ONEBEAD_SAXS_READY=FAIL` because deposited coordinates are incomplete. Other examples are expected to fail conversion because they contain chemistry outside the current ONEBEAD model.
+
+Run all examples from the package directory with:
 
 ```bash
-python3 pdb2plmd.py \
-  -i template_AA.pdb \
-  -o template_AA_saxs.pdb \
-  -a 1-1062 \
-  -v
+python3 examples/run_examples.py
 ```
 
-```plumed
-MOLINFO STRUCTURE=template_AA_saxs.pdb
-
-SAXS ...
-  LABEL=saxsdata
-  ATOMS=1-1062
-  ONEBEAD
-  TEMPLATE=template_AA_saxs.pdb
-... SAXS
-```
-
-
-## Automatic PDB format handling
-
-Input layout is detected automatically. Users do not need to specify CHARMM or CHARMM-GUI mode. The converter performs a lightweight preflight, reads standard three-character and CHARMM-style four-character residue names automatically, and uses the PDB chain ID when present or a SEGID-derived fallback when needed. Detection details are written to the verbose log. Legacy `--charmm` / `--no-charmm` overrides are retained only for backward compatibility and are hidden from normal help.
+Generated PDB and log files are written to `examples/output`.

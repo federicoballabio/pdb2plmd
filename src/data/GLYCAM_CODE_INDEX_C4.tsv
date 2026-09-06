@@ -1,0 +1,1377 @@
+code	ccd_comp_id	anomer	config	sugar	ring	linkage	method	onebead_target	identity	status
+0AA	64K	alpha	D	arabino	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0AB	SEJ	beta	D	arabino	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0AD	BXY	alpha	D	arabino	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0AU	BXX	beta	D	arabino	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0BA		alpha	D	sorbo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0BB		beta	D	sorbo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0BD		alpha	D	sorbo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0BU	UEA	beta	D	sorbo	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0CA		alpha	D	fructo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0CB	BDF	beta	D	fructo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0CD	Z9N	alpha	D	fructo	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0CU	FRU	beta	D	fructo	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0DA	LDY	alpha	D	lyxo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0DB	Z4W	beta	D	lyxo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0DD		alpha	D	lyxo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0DU		beta	D	lyxo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0EA	SHD	alpha	D	altro	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0EB		beta	D	altro	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0FA	FCA	alpha	D	fuco	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0FB	FCB	beta	D	fuco	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0GA	GLC	alpha	D	gluco	pyranose	0	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+0GB	BGC	beta	D	gluco	pyranose	0	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+0HA	XXR	alpha	D	rhamno	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0HB	UBO	beta	D	rhamno	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0JA	T6T	alpha	D	tagato	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0JB		beta	D	tagato	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0JD		alpha	D	tagato	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0JU		beta	D	tagato	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0KA	4GL	alpha	D	gulo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0KB	GL0	beta	D	gulo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0LA	GLA	alpha	D	galacto	pyranose	0	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+0LB	GAL	beta	D	galacto	pyranose	0	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+0MA	MAN	alpha	D	manno	pyranose	0	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+0MB	BMA	beta	D	manno	pyranose	0	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+0NA	AFD	alpha	D	allo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0NB	ALL	beta	D	allo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0OA	ADA	alpha	D	galacto	pyranuronic acid	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0OB	GTR	beta	D	galacto	pyranuronic acid	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0PA		alpha	D	psico	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0PB		beta	D	psico	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0PD	PSV	alpha	D	psico	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0PU	TTV	beta	D	psico	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0QA	G6D	alpha	D	quinovo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0QB	YYK	beta	D	quinovo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0RA	YYM	alpha	D	ribo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0RB	RIP	beta	D	ribo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0RD	RIB	alpha	D	ribo	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0RU	BDR	beta	D	ribo	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0SA	SIA	alpha	D	neuraminic	pyranose	0	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+0SB	SLB	beta	D	neuraminic	pyranose	0	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+0TA		alpha	D	talo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0TB	SDY	beta	D	talo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0UA		alpha	D	ido	pyranuronic acid	0	undecoded			UNSUPPORTED_ONEBEAD
+0UB		beta	D	ido	pyranuronic acid	0	undecoded			UNSUPPORTED_ONEBEAD
+0VA	A2G	alpha	D	galacto	pyranose	0	ccd_name_index	NGA	alpha-D-GalNAcp	SUPPORTED_ONEBEAD
+0VB	NGA	beta	D	galacto	pyranose	0	ccd_name_index	NGA	beta-D-GalNAcp	SUPPORTED_ONEBEAD
+0WA	BM3	alpha	D	manno	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0WB	BM7	beta	D	manno	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0XA	XYS	alpha	D	xylo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0XB	HSZ	beta	D	xylo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0XD		alpha	D	xylo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0XU	XYZ	beta	D	xylo	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0YA	NDG	alpha	D	gluco	pyranose	0	ccd_name_index	NAG	alpha-D-GlcNAcp	SUPPORTED_ONEBEAD
+0YB	NAG	beta	D	gluco	pyranose	0	ccd_name_index	NAG	beta-D-GlcNAcp	SUPPORTED_ONEBEAD
+0ZA	GCU	alpha	D	gluco	pyranuronic acid	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0ZB	BDP	beta	D	gluco	pyranuronic acid	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0aA	ARA	alpha	L	arabino	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0aB	ARB	beta	L	arabino	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0aD	AHR	alpha	L	arabino	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0aU	FUB	beta	L	arabino	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0bA	SOE	alpha	L	sorbo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0bB		beta	L	sorbo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0bD		alpha	L	sorbo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0bU		beta	L	sorbo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0cA		alpha	L	fructo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0cB		beta	L	fructo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0cD		alpha	L	fructo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0cU	LFR	beta	L	fructo	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0dA		alpha	L	lyxo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0dB		beta	L	lyxo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0dD		alpha	L	lyxo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0dU		beta	L	lyxo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0eA	Z6H	alpha	L	altro	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0eB	3MK	beta	L	altro	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0fA	FUC	alpha	L	fuco	pyranose	0	ccd_name_index	FUC	alpha-L-Fucp	SUPPORTED_ONEBEAD
+0fB	FUL	beta	L	fuco	pyranose	0	ccd_name_index	FUC	beta-L-Fucp	SUPPORTED_ONEBEAD
+0gA		alpha	L	gluco	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0gB	Z8T	beta	L	gluco	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0hA	RAM	alpha	L	rhamno	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0hB	RM4	beta	L	rhamno	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0jA		alpha	L	tagato	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0jB		beta	L	tagato	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0jD		alpha	L	tagato	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0jU		beta	L	tagato	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0kA	GUP	alpha	L	gulo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0kB	Z8H	beta	L	gulo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0lA	GXL	alpha	L	galacto	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0lB	GIV	beta	L	galacto	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0mA		alpha	L	manno	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0mB		beta	L	manno	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0nA	Z2D	alpha	L	allo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0nB	WOO	beta	L	allo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0oA		alpha	L	galacto	pyranuronic acid	0	undecoded			UNSUPPORTED_ONEBEAD
+0oB		beta	L	galacto	pyranuronic acid	0	undecoded			UNSUPPORTED_ONEBEAD
+0pA		alpha	L	psico	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0pB		beta	L	psico	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0pD	SF6	alpha	L	psico	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0pU	SF9	beta	L	psico	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0qA		alpha	L	quinovo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0qB		beta	L	quinovo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0rA		alpha	L	ribo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0rB	0MK	beta	L	ribo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0rD	Z6J	alpha	L	ribo	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0rU	32O	beta	L	ribo	furanose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0sA	SIA	alpha	L	neuraminic	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0sB	SLB	beta	L	neuraminic	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0tA		alpha	L	talo	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0tB	ZEE	beta	L	talo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0uA	IDR	alpha	L	ido	pyranuronic acid	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0uB		beta	L	ido	pyranuronic acid	0	undecoded			UNSUPPORTED_ONEBEAD
+0vA	YYQ	alpha	L	galacto	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0vB		beta	L	galacto	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0wA		alpha	L	manno	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0wB		beta	L	manno	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0xA	HSY	alpha	L	xylo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0xB	LXC	beta	L	xylo	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0xD		alpha	L	xylo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0xU		beta	L	xylo	furanose	0	undecoded			UNSUPPORTED_ONEBEAD
+0yA	NGZ	alpha	L	gluco	pyranose	0	ccd_name_index			UNSUPPORTED_ONEBEAD
+0yB		beta	L	gluco	pyranose	0	undecoded			UNSUPPORTED_ONEBEAD
+0zA		alpha	L	gluco	pyranuronic acid	0	undecoded			UNSUPPORTED_ONEBEAD
+0zB		beta	L	gluco	pyranuronic acid	0	undecoded			UNSUPPORTED_ONEBEAD
+1AA	64K	alpha	D	arabino	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1AB	SEJ	beta	D	arabino	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1AD	BXY	alpha	D	arabino	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1AU	BXX	beta	D	arabino	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1BA		alpha	D	sorbo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1BB		beta	D	sorbo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1BD		alpha	D	sorbo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1BU	UEA	beta	D	sorbo	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1CA		alpha	D	fructo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1CB	BDF	beta	D	fructo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1CD	Z9N	alpha	D	fructo	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1CU	FRU	beta	D	fructo	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1DA	LDY	alpha	D	lyxo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1DB	Z4W	beta	D	lyxo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1DD		alpha	D	lyxo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1DU		beta	D	lyxo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1EA	SHD	alpha	D	altro	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1EB		beta	D	altro	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1FA	FCA	alpha	D	fuco	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1FB	FCB	beta	D	fuco	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1GA	GLC	alpha	D	gluco	pyranose	1	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+1GB	BGC	beta	D	gluco	pyranose	1	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+1HA	XXR	alpha	D	rhamno	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1HB	UBO	beta	D	rhamno	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1JA	T6T	alpha	D	tagato	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1JB		beta	D	tagato	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1JD		alpha	D	tagato	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1JU		beta	D	tagato	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1KA	4GL	alpha	D	gulo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1KB	GL0	beta	D	gulo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1LA	GLA	alpha	D	galacto	pyranose	1	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+1LB	GAL	beta	D	galacto	pyranose	1	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+1MA	MAN	alpha	D	manno	pyranose	1	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+1MB	BMA	beta	D	manno	pyranose	1	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+1NA	AFD	alpha	D	allo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1NB	ALL	beta	D	allo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1OA	ADA	alpha	D	galacto	pyranuronic acid	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1OB	GTR	beta	D	galacto	pyranuronic acid	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1PA		alpha	D	psico	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1PB		beta	D	psico	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1PD	PSV	alpha	D	psico	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1PU	TTV	beta	D	psico	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1QA	G6D	alpha	D	quinovo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1QB	YYK	beta	D	quinovo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1RA	YYM	alpha	D	ribo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1RB	RIP	beta	D	ribo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1RD	RIB	alpha	D	ribo	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1RU	BDR	beta	D	ribo	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1TA		alpha	D	talo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1TB	SDY	beta	D	talo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1UA		alpha	D	ido	pyranuronic acid	1	undecoded			UNSUPPORTED_ONEBEAD
+1UB		beta	D	ido	pyranuronic acid	1	undecoded			UNSUPPORTED_ONEBEAD
+1VA	A2G	alpha	D	galacto	pyranose	1	ccd_name_index	NGA	alpha-D-GalNAcp	SUPPORTED_ONEBEAD
+1VB	NGA	beta	D	galacto	pyranose	1	ccd_name_index	NGA	beta-D-GalNAcp	SUPPORTED_ONEBEAD
+1WA	BM3	alpha	D	manno	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1WB	BM7	beta	D	manno	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1XA	XYS	alpha	D	xylo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1XB	HSZ	beta	D	xylo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1XD		alpha	D	xylo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1XU	XYZ	beta	D	xylo	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1YA	NDG	alpha	D	gluco	pyranose	1	ccd_name_index	NAG	alpha-D-GlcNAcp	SUPPORTED_ONEBEAD
+1YB	NAG	beta	D	gluco	pyranose	1	ccd_name_index	NAG	beta-D-GlcNAcp	SUPPORTED_ONEBEAD
+1ZA	GCU	alpha	D	gluco	pyranuronic acid	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1ZB	BDP	beta	D	gluco	pyranuronic acid	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1aA	ARA	alpha	L	arabino	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1aB	ARB	beta	L	arabino	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1aD	AHR	alpha	L	arabino	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1aU	FUB	beta	L	arabino	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1bA	SOE	alpha	L	sorbo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1bB		beta	L	sorbo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1bD		alpha	L	sorbo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1bU		beta	L	sorbo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1cA		alpha	L	fructo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1cB		beta	L	fructo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1cD		alpha	L	fructo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1cU	LFR	beta	L	fructo	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1dA		alpha	L	lyxo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1dB		beta	L	lyxo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1dD		alpha	L	lyxo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1dU		beta	L	lyxo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1eA	Z6H	alpha	L	altro	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1eB	3MK	beta	L	altro	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1fA	FUC	alpha	L	fuco	pyranose	1	ccd_name_index	FUC	alpha-L-Fucp	SUPPORTED_ONEBEAD
+1fB	FUL	beta	L	fuco	pyranose	1	ccd_name_index	FUC	beta-L-Fucp	SUPPORTED_ONEBEAD
+1gA		alpha	L	gluco	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1gB	Z8T	beta	L	gluco	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1hA	RAM	alpha	L	rhamno	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1hB	RM4	beta	L	rhamno	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1jA		alpha	L	tagato	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1jB		beta	L	tagato	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1jD		alpha	L	tagato	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1jU		beta	L	tagato	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1kA	GUP	alpha	L	gulo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1kB	Z8H	beta	L	gulo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1lA	GXL	alpha	L	galacto	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1lB	GIV	beta	L	galacto	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1mA		alpha	L	manno	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1mB		beta	L	manno	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1nA	Z2D	alpha	L	allo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1nB	WOO	beta	L	allo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1oA		alpha	L	galacto	pyranuronic acid	1	undecoded			UNSUPPORTED_ONEBEAD
+1oB		beta	L	galacto	pyranuronic acid	1	undecoded			UNSUPPORTED_ONEBEAD
+1pA		alpha	L	psico	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1pB		beta	L	psico	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1pD	SF6	alpha	L	psico	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1pU	SF9	beta	L	psico	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1qA		alpha	L	quinovo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1qB		beta	L	quinovo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1rA		alpha	L	ribo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1rB	0MK	beta	L	ribo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1rD	Z6J	alpha	L	ribo	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1rU	32O	beta	L	ribo	furanose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1tA		alpha	L	talo	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1tB	ZEE	beta	L	talo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1uA	IDR	alpha	L	ido	pyranuronic acid	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1uB		beta	L	ido	pyranuronic acid	1	undecoded			UNSUPPORTED_ONEBEAD
+1vA	YYQ	alpha	L	galacto	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1vB		beta	L	galacto	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1wA		alpha	L	manno	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1wB		beta	L	manno	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1xA	HSY	alpha	L	xylo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1xB	LXC	beta	L	xylo	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1xD		alpha	L	xylo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1xU		beta	L	xylo	furanose	1	undecoded			UNSUPPORTED_ONEBEAD
+1yA	NGZ	alpha	L	gluco	pyranose	1	ccd_name_index			UNSUPPORTED_ONEBEAD
+1yB		beta	L	gluco	pyranose	1	undecoded			UNSUPPORTED_ONEBEAD
+1zA		alpha	L	gluco	pyranuronic acid	1	undecoded			UNSUPPORTED_ONEBEAD
+1zB		beta	L	gluco	pyranuronic acid	1	undecoded			UNSUPPORTED_ONEBEAD
+2AA	64K	alpha	D	arabino	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2AB	SEJ	beta	D	arabino	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2AD	BXY	alpha	D	arabino	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2AU	BXX	beta	D	arabino	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2BA		alpha	D	sorbo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2BB		beta	D	sorbo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2BD		alpha	D	sorbo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2BU	UEA	beta	D	sorbo	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2CA		alpha	D	fructo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2CB	BDF	beta	D	fructo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2CD	Z9N	alpha	D	fructo	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2CU	FRU	beta	D	fructo	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2DA	LDY	alpha	D	lyxo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2DB	Z4W	beta	D	lyxo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2DD		alpha	D	lyxo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2DU		beta	D	lyxo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2EA	SHD	alpha	D	altro	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2EB		beta	D	altro	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2FA	FCA	alpha	D	fuco	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2FB	FCB	beta	D	fuco	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2GA	GLC	alpha	D	gluco	pyranose	2	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+2GB	BGC	beta	D	gluco	pyranose	2	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+2HA	XXR	alpha	D	rhamno	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2HB	UBO	beta	D	rhamno	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2JA	T6T	alpha	D	tagato	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2JB		beta	D	tagato	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2JD		alpha	D	tagato	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2JU		beta	D	tagato	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2KA	4GL	alpha	D	gulo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2KB	GL0	beta	D	gulo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2LA	GLA	alpha	D	galacto	pyranose	2	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+2LB	GAL	beta	D	galacto	pyranose	2	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+2MA	MAN	alpha	D	manno	pyranose	2	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+2MB	BMA	beta	D	manno	pyranose	2	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+2NA	AFD	alpha	D	allo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2NB	ALL	beta	D	allo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2OA	ADA	alpha	D	galacto	pyranuronic acid	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2OB	GTR	beta	D	galacto	pyranuronic acid	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2PA		alpha	D	psico	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2PB		beta	D	psico	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2PD	PSV	alpha	D	psico	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2PU	TTV	beta	D	psico	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2QA	G6D	alpha	D	quinovo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2QB	YYK	beta	D	quinovo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2RA	YYM	alpha	D	ribo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2RB	RIP	beta	D	ribo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2RD	RIB	alpha	D	ribo	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2RU	BDR	beta	D	ribo	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2TA		alpha	D	talo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2TB	SDY	beta	D	talo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2UA		alpha	D	ido	pyranuronic acid	2	undecoded			UNSUPPORTED_ONEBEAD
+2UB		beta	D	ido	pyranuronic acid	2	undecoded			UNSUPPORTED_ONEBEAD
+2XA	XYS	alpha	D	xylo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2XB	HSZ	beta	D	xylo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2XD		alpha	D	xylo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2XU	XYZ	beta	D	xylo	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2ZA	GCU	alpha	D	gluco	pyranuronic acid	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2ZB	BDP	beta	D	gluco	pyranuronic acid	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2aA	ARA	alpha	L	arabino	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2aB	ARB	beta	L	arabino	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2aD	AHR	alpha	L	arabino	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2aU	FUB	beta	L	arabino	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2bA	SOE	alpha	L	sorbo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2bB		beta	L	sorbo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2bD		alpha	L	sorbo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2bU		beta	L	sorbo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2cA		alpha	L	fructo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2cB		beta	L	fructo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2cD		alpha	L	fructo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2cU	LFR	beta	L	fructo	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2dA		alpha	L	lyxo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2dB		beta	L	lyxo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2dD		alpha	L	lyxo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2dU		beta	L	lyxo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2eA	Z6H	alpha	L	altro	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2eB	3MK	beta	L	altro	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2fA	FUC	alpha	L	fuco	pyranose	2	ccd_name_index	FUC	alpha-L-Fucp	SUPPORTED_ONEBEAD
+2fB	FUL	beta	L	fuco	pyranose	2	ccd_name_index	FUC	beta-L-Fucp	SUPPORTED_ONEBEAD
+2gA		alpha	L	gluco	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2gB	Z8T	beta	L	gluco	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2hA	RAM	alpha	L	rhamno	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2hB	RM4	beta	L	rhamno	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2jA		alpha	L	tagato	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2jB		beta	L	tagato	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2jD		alpha	L	tagato	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2jU		beta	L	tagato	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2kA	GUP	alpha	L	gulo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2kB	Z8H	beta	L	gulo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2lA	GXL	alpha	L	galacto	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2lB	GIV	beta	L	galacto	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2mA		alpha	L	manno	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2mB		beta	L	manno	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2nA	Z2D	alpha	L	allo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2nB	WOO	beta	L	allo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2oA		alpha	L	galacto	pyranuronic acid	2	undecoded			UNSUPPORTED_ONEBEAD
+2oB		beta	L	galacto	pyranuronic acid	2	undecoded			UNSUPPORTED_ONEBEAD
+2pA		alpha	L	psico	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2pB		beta	L	psico	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2pD	SF6	alpha	L	psico	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2pU	SF9	beta	L	psico	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2qA		alpha	L	quinovo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2qB		beta	L	quinovo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2rA		alpha	L	ribo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2rB	0MK	beta	L	ribo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2rD	Z6J	alpha	L	ribo	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2rU	32O	beta	L	ribo	furanose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2tA		alpha	L	talo	pyranose	2	undecoded			UNSUPPORTED_ONEBEAD
+2tB	ZEE	beta	L	talo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2uA	IDR	alpha	L	ido	pyranuronic acid	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2uB		beta	L	ido	pyranuronic acid	2	undecoded			UNSUPPORTED_ONEBEAD
+2xA	HSY	alpha	L	xylo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2xB	LXC	beta	L	xylo	pyranose	2	ccd_name_index			UNSUPPORTED_ONEBEAD
+2xD		alpha	L	xylo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2xU		beta	L	xylo	furanose	2	undecoded			UNSUPPORTED_ONEBEAD
+2zA		alpha	L	gluco	pyranuronic acid	2	undecoded			UNSUPPORTED_ONEBEAD
+2zB		beta	L	gluco	pyranuronic acid	2	undecoded			UNSUPPORTED_ONEBEAD
+3AA	64K	alpha	D	arabino	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3AB	SEJ	beta	D	arabino	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3AD	BXY	alpha	D	arabino	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3AU	BXX	beta	D	arabino	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3BA		alpha	D	sorbo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3BB		beta	D	sorbo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3BD		alpha	D	sorbo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3BU	UEA	beta	D	sorbo	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3CA		alpha	D	fructo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3CB	BDF	beta	D	fructo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3CD	Z9N	alpha	D	fructo	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3CU	FRU	beta	D	fructo	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3DA	LDY	alpha	D	lyxo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3DB	Z4W	beta	D	lyxo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3DD		alpha	D	lyxo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3DU		beta	D	lyxo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3EA	SHD	alpha	D	altro	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3EB		beta	D	altro	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3FA	FCA	alpha	D	fuco	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3FB	FCB	beta	D	fuco	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3GA	GLC	alpha	D	gluco	pyranose	3	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+3GB	BGC	beta	D	gluco	pyranose	3	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+3HA	XXR	alpha	D	rhamno	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3HB	UBO	beta	D	rhamno	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3JA	T6T	alpha	D	tagato	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3JB		beta	D	tagato	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3JD		alpha	D	tagato	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3JU		beta	D	tagato	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3KA	4GL	alpha	D	gulo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3KB	GL0	beta	D	gulo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3LA	GLA	alpha	D	galacto	pyranose	3	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+3LB	GAL	beta	D	galacto	pyranose	3	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+3MA	MAN	alpha	D	manno	pyranose	3	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+3MB	BMA	beta	D	manno	pyranose	3	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+3NA	AFD	alpha	D	allo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3NB	ALL	beta	D	allo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3OA	ADA	alpha	D	galacto	pyranuronic acid	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3OB	GTR	beta	D	galacto	pyranuronic acid	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3PA		alpha	D	psico	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3PB		beta	D	psico	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3PD	PSV	alpha	D	psico	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3PU	TTV	beta	D	psico	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3QA	G6D	alpha	D	quinovo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3QB	YYK	beta	D	quinovo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3RA	YYM	alpha	D	ribo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3RB	RIP	beta	D	ribo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3RD	RIB	alpha	D	ribo	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3RU	BDR	beta	D	ribo	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3TA		alpha	D	talo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3TB	SDY	beta	D	talo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3UA		alpha	D	ido	pyranuronic acid	3	undecoded			UNSUPPORTED_ONEBEAD
+3UB		beta	D	ido	pyranuronic acid	3	undecoded			UNSUPPORTED_ONEBEAD
+3VA	A2G	alpha	D	galacto	pyranose	3	ccd_name_index	NGA	alpha-D-GalNAcp	SUPPORTED_ONEBEAD
+3VB	NGA	beta	D	galacto	pyranose	3	ccd_name_index	NGA	beta-D-GalNAcp	SUPPORTED_ONEBEAD
+3WA	BM3	alpha	D	manno	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3WB	BM7	beta	D	manno	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3XA	XYS	alpha	D	xylo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3XB	HSZ	beta	D	xylo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3XD		alpha	D	xylo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3XU	XYZ	beta	D	xylo	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3YA	NDG	alpha	D	gluco	pyranose	3	ccd_name_index	NAG	alpha-D-GlcNAcp	SUPPORTED_ONEBEAD
+3YB	NAG	beta	D	gluco	pyranose	3	ccd_name_index	NAG	beta-D-GlcNAcp	SUPPORTED_ONEBEAD
+3ZA	GCU	alpha	D	gluco	pyranuronic acid	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3ZB	BDP	beta	D	gluco	pyranuronic acid	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3aA	ARA	alpha	L	arabino	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3aB	ARB	beta	L	arabino	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3aD	AHR	alpha	L	arabino	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3aU	FUB	beta	L	arabino	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3bA	SOE	alpha	L	sorbo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3bB		beta	L	sorbo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3bD		alpha	L	sorbo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3bU		beta	L	sorbo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3cA		alpha	L	fructo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3cB		beta	L	fructo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3cD		alpha	L	fructo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3cU	LFR	beta	L	fructo	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3dA		alpha	L	lyxo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3dB		beta	L	lyxo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3dD		alpha	L	lyxo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3dU		beta	L	lyxo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3eA	Z6H	alpha	L	altro	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3eB	3MK	beta	L	altro	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3fA	FUC	alpha	L	fuco	pyranose	3	ccd_name_index	FUC	alpha-L-Fucp	SUPPORTED_ONEBEAD
+3fB	FUL	beta	L	fuco	pyranose	3	ccd_name_index	FUC	beta-L-Fucp	SUPPORTED_ONEBEAD
+3gA		alpha	L	gluco	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3gB	Z8T	beta	L	gluco	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3hA	RAM	alpha	L	rhamno	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3hB	RM4	beta	L	rhamno	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3jA		alpha	L	tagato	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3jB		beta	L	tagato	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3jD		alpha	L	tagato	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3jU		beta	L	tagato	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3kA	GUP	alpha	L	gulo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3kB	Z8H	beta	L	gulo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3lA	GXL	alpha	L	galacto	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3lB	GIV	beta	L	galacto	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3mA		alpha	L	manno	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3mB		beta	L	manno	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3nA	Z2D	alpha	L	allo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3nB	WOO	beta	L	allo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3oA		alpha	L	galacto	pyranuronic acid	3	undecoded			UNSUPPORTED_ONEBEAD
+3oB		beta	L	galacto	pyranuronic acid	3	undecoded			UNSUPPORTED_ONEBEAD
+3pA		alpha	L	psico	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3pB		beta	L	psico	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3pD	SF6	alpha	L	psico	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3pU	SF9	beta	L	psico	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3qA		alpha	L	quinovo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3qB		beta	L	quinovo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3rA		alpha	L	ribo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3rB	0MK	beta	L	ribo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3rD	Z6J	alpha	L	ribo	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3rU	32O	beta	L	ribo	furanose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3tA		alpha	L	talo	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3tB	ZEE	beta	L	talo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3uA	IDR	alpha	L	ido	pyranuronic acid	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3uB		beta	L	ido	pyranuronic acid	3	undecoded			UNSUPPORTED_ONEBEAD
+3vA	YYQ	alpha	L	galacto	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3vB		beta	L	galacto	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3wA		alpha	L	manno	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3wB		beta	L	manno	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3xA	HSY	alpha	L	xylo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3xB	LXC	beta	L	xylo	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3xD		alpha	L	xylo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3xU		beta	L	xylo	furanose	3	undecoded			UNSUPPORTED_ONEBEAD
+3yA	NGZ	alpha	L	gluco	pyranose	3	ccd_name_index			UNSUPPORTED_ONEBEAD
+3yB		beta	L	gluco	pyranose	3	undecoded			UNSUPPORTED_ONEBEAD
+3zA		alpha	L	gluco	pyranuronic acid	3	undecoded			UNSUPPORTED_ONEBEAD
+3zB		beta	L	gluco	pyranuronic acid	3	undecoded			UNSUPPORTED_ONEBEAD
+4AA	64K	alpha	D	arabino	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4AB	SEJ	beta	D	arabino	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4BA		alpha	D	sorbo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4BB		beta	D	sorbo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4BD		alpha	D	sorbo	furanose	4	undecoded			UNSUPPORTED_ONEBEAD
+4BU	UEA	beta	D	sorbo	furanose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4CA		alpha	D	fructo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4CB	BDF	beta	D	fructo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4CD	Z9N	alpha	D	fructo	furanose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4CU	FRU	beta	D	fructo	furanose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4DA	LDY	alpha	D	lyxo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4DB	Z4W	beta	D	lyxo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4EA	SHD	alpha	D	altro	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4EB		beta	D	altro	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4FA	FCA	alpha	D	fuco	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4FB	FCB	beta	D	fuco	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4GA	GLC	alpha	D	gluco	pyranose	4	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+4GB	BGC	beta	D	gluco	pyranose	4	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+4HA	XXR	alpha	D	rhamno	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4HB	UBO	beta	D	rhamno	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4JA	T6T	alpha	D	tagato	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4JB		beta	D	tagato	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4JD		alpha	D	tagato	furanose	4	undecoded			UNSUPPORTED_ONEBEAD
+4JU		beta	D	tagato	furanose	4	undecoded			UNSUPPORTED_ONEBEAD
+4KA	4GL	alpha	D	gulo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4KB	GL0	beta	D	gulo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4LA	GLA	alpha	D	galacto	pyranose	4	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+4LB	GAL	beta	D	galacto	pyranose	4	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+4MA	MAN	alpha	D	manno	pyranose	4	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+4MB	BMA	beta	D	manno	pyranose	4	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+4NA	AFD	alpha	D	allo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4NB	ALL	beta	D	allo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4OA	ADA	alpha	D	galacto	pyranuronic acid	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4OB	GTR	beta	D	galacto	pyranuronic acid	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4PA		alpha	D	psico	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4PB		beta	D	psico	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4PD	PSV	alpha	D	psico	furanose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4PU	TTV	beta	D	psico	furanose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4QA	G6D	alpha	D	quinovo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4QB	YYK	beta	D	quinovo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4RA	YYM	alpha	D	ribo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4RB	RIP	beta	D	ribo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4SA	SIA	alpha	D	neuraminic	pyranose	4	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+4SB	SLB	beta	D	neuraminic	pyranose	4	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+4TA		alpha	D	talo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4TB	SDY	beta	D	talo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4UA		alpha	D	ido	pyranuronic acid	4	undecoded			UNSUPPORTED_ONEBEAD
+4UB		beta	D	ido	pyranuronic acid	4	undecoded			UNSUPPORTED_ONEBEAD
+4VA	A2G	alpha	D	galacto	pyranose	4	ccd_name_index	NGA	alpha-D-GalNAcp	SUPPORTED_ONEBEAD
+4VB	NGA	beta	D	galacto	pyranose	4	ccd_name_index	NGA	beta-D-GalNAcp	SUPPORTED_ONEBEAD
+4WA	BM3	alpha	D	manno	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4WB	BM7	beta	D	manno	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4XA	XYS	alpha	D	xylo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4XB	HSZ	beta	D	xylo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4YA	NDG	alpha	D	gluco	pyranose	4	ccd_name_index	NAG	alpha-D-GlcNAcp	SUPPORTED_ONEBEAD
+4YB	NAG	beta	D	gluco	pyranose	4	ccd_name_index	NAG	beta-D-GlcNAcp	SUPPORTED_ONEBEAD
+4ZA	GCU	alpha	D	gluco	pyranuronic acid	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4ZB	BDP	beta	D	gluco	pyranuronic acid	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4aA	ARA	alpha	L	arabino	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4aB	ARB	beta	L	arabino	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4bA	SOE	alpha	L	sorbo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4bB		beta	L	sorbo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4bD		alpha	L	sorbo	furanose	4	undecoded			UNSUPPORTED_ONEBEAD
+4bU		beta	L	sorbo	furanose	4	undecoded			UNSUPPORTED_ONEBEAD
+4cA		alpha	L	fructo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4cB		beta	L	fructo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4cD		alpha	L	fructo	furanose	4	undecoded			UNSUPPORTED_ONEBEAD
+4cU	LFR	beta	L	fructo	furanose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4dA		alpha	L	lyxo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4dB		beta	L	lyxo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4eA	Z6H	alpha	L	altro	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4eB	3MK	beta	L	altro	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4fA	FUC	alpha	L	fuco	pyranose	4	ccd_name_index	FUC	alpha-L-Fucp	SUPPORTED_ONEBEAD
+4fB	FUL	beta	L	fuco	pyranose	4	ccd_name_index	FUC	beta-L-Fucp	SUPPORTED_ONEBEAD
+4gA		alpha	L	gluco	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4gB	Z8T	beta	L	gluco	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4hA	RAM	alpha	L	rhamno	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4hB	RM4	beta	L	rhamno	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4jA		alpha	L	tagato	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4jB		beta	L	tagato	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4jD		alpha	L	tagato	furanose	4	undecoded			UNSUPPORTED_ONEBEAD
+4jU		beta	L	tagato	furanose	4	undecoded			UNSUPPORTED_ONEBEAD
+4kA	GUP	alpha	L	gulo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4kB	Z8H	beta	L	gulo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4lA	GXL	alpha	L	galacto	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4lB	GIV	beta	L	galacto	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4mA		alpha	L	manno	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4mB		beta	L	manno	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4nA	Z2D	alpha	L	allo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4nB	WOO	beta	L	allo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4oA		alpha	L	galacto	pyranuronic acid	4	undecoded			UNSUPPORTED_ONEBEAD
+4oB		beta	L	galacto	pyranuronic acid	4	undecoded			UNSUPPORTED_ONEBEAD
+4pA		alpha	L	psico	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4pB		beta	L	psico	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4pD	SF6	alpha	L	psico	furanose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4pU	SF9	beta	L	psico	furanose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4qA		alpha	L	quinovo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4qB		beta	L	quinovo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4rA		alpha	L	ribo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4rB	0MK	beta	L	ribo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4sA	SIA	alpha	L	neuraminic	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4sB	SLB	beta	L	neuraminic	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4tA		alpha	L	talo	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4tB	ZEE	beta	L	talo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4uA	IDR	alpha	L	ido	pyranuronic acid	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4uB		beta	L	ido	pyranuronic acid	4	undecoded			UNSUPPORTED_ONEBEAD
+4vA	YYQ	alpha	L	galacto	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4vB		beta	L	galacto	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4wA		alpha	L	manno	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4wB		beta	L	manno	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4xA	HSY	alpha	L	xylo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4xB	LXC	beta	L	xylo	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4yA	NGZ	alpha	L	gluco	pyranose	4	ccd_name_index			UNSUPPORTED_ONEBEAD
+4yB		beta	L	gluco	pyranose	4	undecoded			UNSUPPORTED_ONEBEAD
+4zA		alpha	L	gluco	pyranuronic acid	4	undecoded			UNSUPPORTED_ONEBEAD
+4zB		beta	L	gluco	pyranuronic acid	4	undecoded			UNSUPPORTED_ONEBEAD
+5AD	BXY	alpha	D	arabino	furanose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5AU	BXX	beta	D	arabino	furanose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5BA		alpha	D	sorbo	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5BB		beta	D	sorbo	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5CA		alpha	D	fructo	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5CB	BDF	beta	D	fructo	pyranose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5DD		alpha	D	lyxo	furanose	5	undecoded			UNSUPPORTED_ONEBEAD
+5DU		beta	D	lyxo	furanose	5	undecoded			UNSUPPORTED_ONEBEAD
+5JA	T6T	alpha	D	tagato	pyranose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5JB		beta	D	tagato	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5PA		alpha	D	psico	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5PB		beta	D	psico	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5RD	RIB	alpha	D	ribo	furanose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5RU	BDR	beta	D	ribo	furanose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5XD		alpha	D	xylo	furanose	5	undecoded			UNSUPPORTED_ONEBEAD
+5XU	XYZ	beta	D	xylo	furanose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5aD	AHR	alpha	L	arabino	furanose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5aU	FUB	beta	L	arabino	furanose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5bA	SOE	alpha	L	sorbo	pyranose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5bB		beta	L	sorbo	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5cA		alpha	L	fructo	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5cB		beta	L	fructo	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5dD		alpha	L	lyxo	furanose	5	undecoded			UNSUPPORTED_ONEBEAD
+5dU		beta	L	lyxo	furanose	5	undecoded			UNSUPPORTED_ONEBEAD
+5jA		alpha	L	tagato	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5jB		beta	L	tagato	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5pA		alpha	L	psico	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5pB		beta	L	psico	pyranose	5	undecoded			UNSUPPORTED_ONEBEAD
+5rD	Z6J	alpha	L	ribo	furanose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5rU	32O	beta	L	ribo	furanose	5	ccd_name_index			UNSUPPORTED_ONEBEAD
+5xD		alpha	L	xylo	furanose	5	undecoded			UNSUPPORTED_ONEBEAD
+5xU		beta	L	xylo	furanose	5	undecoded			UNSUPPORTED_ONEBEAD
+6BD		alpha	D	sorbo	furanose	6	undecoded			UNSUPPORTED_ONEBEAD
+6BU	UEA	beta	D	sorbo	furanose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6CD	Z9N	alpha	D	fructo	furanose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6CU	FRU	beta	D	fructo	furanose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6EA	SHD	alpha	D	altro	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6EB		beta	D	altro	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+6GA	GLC	alpha	D	gluco	pyranose	6	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+6GB	BGC	beta	D	gluco	pyranose	6	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+6JD		alpha	D	tagato	furanose	6	undecoded			UNSUPPORTED_ONEBEAD
+6JU		beta	D	tagato	furanose	6	undecoded			UNSUPPORTED_ONEBEAD
+6KA	4GL	alpha	D	gulo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6KB	GL0	beta	D	gulo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6LA	GLA	alpha	D	galacto	pyranose	6	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+6LB	GAL	beta	D	galacto	pyranose	6	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+6MA	MAN	alpha	D	manno	pyranose	6	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+6MB	BMA	beta	D	manno	pyranose	6	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+6NA	AFD	alpha	D	allo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6NB	ALL	beta	D	allo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6PD	PSV	alpha	D	psico	furanose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6PU	TTV	beta	D	psico	furanose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6TA		alpha	D	talo	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+6TB	SDY	beta	D	talo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6VA	A2G	alpha	D	galacto	pyranose	6	ccd_name_index	NGA	alpha-D-GalNAcp	SUPPORTED_ONEBEAD
+6VB	NGA	beta	D	galacto	pyranose	6	ccd_name_index	NGA	beta-D-GalNAcp	SUPPORTED_ONEBEAD
+6WA	BM3	alpha	D	manno	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6WB	BM7	beta	D	manno	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6YA	NDG	alpha	D	gluco	pyranose	6	ccd_name_index	NAG	alpha-D-GlcNAcp	SUPPORTED_ONEBEAD
+6YB	NAG	beta	D	gluco	pyranose	6	ccd_name_index	NAG	beta-D-GlcNAcp	SUPPORTED_ONEBEAD
+6bD		alpha	L	sorbo	furanose	6	undecoded			UNSUPPORTED_ONEBEAD
+6bU		beta	L	sorbo	furanose	6	undecoded			UNSUPPORTED_ONEBEAD
+6cD		alpha	L	fructo	furanose	6	undecoded			UNSUPPORTED_ONEBEAD
+6cU	LFR	beta	L	fructo	furanose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6eA	Z6H	alpha	L	altro	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6eB	3MK	beta	L	altro	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6gA		alpha	L	gluco	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+6gB	Z8T	beta	L	gluco	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6jD		alpha	L	tagato	furanose	6	undecoded			UNSUPPORTED_ONEBEAD
+6jU		beta	L	tagato	furanose	6	undecoded			UNSUPPORTED_ONEBEAD
+6kA	GUP	alpha	L	gulo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6kB	Z8H	beta	L	gulo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6lA	GXL	alpha	L	galacto	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6lB	GIV	beta	L	galacto	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6mA		alpha	L	manno	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+6mB		beta	L	manno	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+6nA	Z2D	alpha	L	allo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6nB	WOO	beta	L	allo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6pD	SF6	alpha	L	psico	furanose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6pU	SF9	beta	L	psico	furanose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6tA		alpha	L	talo	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+6tB	ZEE	beta	L	talo	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6vA	YYQ	alpha	L	galacto	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6vB		beta	L	galacto	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+6wA		alpha	L	manno	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+6wB		beta	L	manno	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+6yA	NGZ	alpha	L	gluco	pyranose	6	ccd_name_index			UNSUPPORTED_ONEBEAD
+6yB		beta	L	gluco	pyranose	6	undecoded			UNSUPPORTED_ONEBEAD
+7SA	SIA	alpha	D	neuraminic	pyranose	7	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+7SB	SLB	beta	D	neuraminic	pyranose	7	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+7sA	SIA	alpha	L	neuraminic	pyranose	7	ccd_name_index			UNSUPPORTED_ONEBEAD
+7sB	SLB	beta	L	neuraminic	pyranose	7	ccd_name_index			UNSUPPORTED_ONEBEAD
+8SA	SIA	alpha	D	neuraminic	pyranose	8	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+8SB	SLB	beta	D	neuraminic	pyranose	8	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+8sA	SIA	alpha	L	neuraminic	pyranose	8	ccd_name_index			UNSUPPORTED_ONEBEAD
+8sB	SLB	beta	L	neuraminic	pyranose	8	ccd_name_index			UNSUPPORTED_ONEBEAD
+9SA	SIA	alpha	D	neuraminic	pyranose	9	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+9SB	SLB	beta	D	neuraminic	pyranose	9	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+9sA	SIA	alpha	L	neuraminic	pyranose	9	ccd_name_index			UNSUPPORTED_ONEBEAD
+9sB	SLB	beta	L	neuraminic	pyranose	9	ccd_name_index			UNSUPPORTED_ONEBEAD
+ASA	SIA	alpha	D	neuraminic	pyranose	A	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+ASB	SLB	beta	D	neuraminic	pyranose	A	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+AsA	SIA	alpha	L	neuraminic	pyranose	A	ccd_name_index			UNSUPPORTED_ONEBEAD
+AsB	SLB	beta	L	neuraminic	pyranose	A	ccd_name_index			UNSUPPORTED_ONEBEAD
+BSA	SIA	alpha	D	neuraminic	pyranose	B	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+BSB	SLB	beta	D	neuraminic	pyranose	B	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+BsA	SIA	alpha	L	neuraminic	pyranose	B	ccd_name_index			UNSUPPORTED_ONEBEAD
+BsB	SLB	beta	L	neuraminic	pyranose	B	ccd_name_index			UNSUPPORTED_ONEBEAD
+CSA	SIA	alpha	D	neuraminic	pyranose	C	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+CSB	SLB	beta	D	neuraminic	pyranose	C	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+CsA	SIA	alpha	L	neuraminic	pyranose	C	ccd_name_index			UNSUPPORTED_ONEBEAD
+CsB	SLB	beta	L	neuraminic	pyranose	C	ccd_name_index			UNSUPPORTED_ONEBEAD
+DSA	SIA	alpha	D	neuraminic	pyranose	D	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+DSB	SLB	beta	D	neuraminic	pyranose	D	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+DsA	SIA	alpha	L	neuraminic	pyranose	D	ccd_name_index			UNSUPPORTED_ONEBEAD
+DsB	SLB	beta	L	neuraminic	pyranose	D	ccd_name_index			UNSUPPORTED_ONEBEAD
+ESA	SIA	alpha	D	neuraminic	pyranose	E	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+ESB	SLB	beta	D	neuraminic	pyranose	E	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+EsA	SIA	alpha	L	neuraminic	pyranose	E	ccd_name_index			UNSUPPORTED_ONEBEAD
+EsB	SLB	beta	L	neuraminic	pyranose	E	ccd_name_index			UNSUPPORTED_ONEBEAD
+FSA	SIA	alpha	D	neuraminic	pyranose	F	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+FSB	SLB	beta	D	neuraminic	pyranose	F	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+FsA	SIA	alpha	L	neuraminic	pyranose	F	ccd_name_index			UNSUPPORTED_ONEBEAD
+FsB	SLB	beta	L	neuraminic	pyranose	F	ccd_name_index			UNSUPPORTED_ONEBEAD
+GSA	SIA	alpha	D	neuraminic	pyranose	G	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+GSB	SLB	beta	D	neuraminic	pyranose	G	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+GsA	SIA	alpha	L	neuraminic	pyranose	G	ccd_name_index			UNSUPPORTED_ONEBEAD
+GsB	SLB	beta	L	neuraminic	pyranose	G	ccd_name_index			UNSUPPORTED_ONEBEAD
+HSA	SIA	alpha	D	neuraminic	pyranose	H	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+HSB	SLB	beta	D	neuraminic	pyranose	H	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+HsA	SIA	alpha	L	neuraminic	pyranose	H	ccd_name_index			UNSUPPORTED_ONEBEAD
+HsB	SLB	beta	L	neuraminic	pyranose	H	ccd_name_index			UNSUPPORTED_ONEBEAD
+ISA	SIA	alpha	D	neuraminic	pyranose	I	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+ISB	SLB	beta	D	neuraminic	pyranose	I	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+IsA	SIA	alpha	L	neuraminic	pyranose	I	ccd_name_index			UNSUPPORTED_ONEBEAD
+IsB	SLB	beta	L	neuraminic	pyranose	I	ccd_name_index			UNSUPPORTED_ONEBEAD
+JSA	SIA	alpha	D	neuraminic	pyranose	J	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+JSB	SLB	beta	D	neuraminic	pyranose	J	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+JsA	SIA	alpha	L	neuraminic	pyranose	J	ccd_name_index			UNSUPPORTED_ONEBEAD
+JsB	SLB	beta	L	neuraminic	pyranose	J	ccd_name_index			UNSUPPORTED_ONEBEAD
+KSA	SIA	alpha	D	neuraminic	pyranose	K	ccd_name_index	SIA	alpha-D-Neu5Ac	SUPPORTED_ONEBEAD
+KSB	SLB	beta	D	neuraminic	pyranose	K	ccd_name_index	SIA	beta-D-Neu5Ac	SUPPORTED_ONEBEAD
+KsA	SIA	alpha	L	neuraminic	pyranose	K	ccd_name_index			UNSUPPORTED_ONEBEAD
+KsB	SLB	beta	L	neuraminic	pyranose	K	ccd_name_index			UNSUPPORTED_ONEBEAD
+PEA	SHD	alpha	D	altro	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PEB		beta	D	altro	pyranose	P	undecoded			UNSUPPORTED_ONEBEAD
+PGA	GLC	alpha	D	gluco	pyranose	P	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+PGB	BGC	beta	D	gluco	pyranose	P	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+PKA	4GL	alpha	D	gulo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PKB	GL0	beta	D	gulo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PLA	GLA	alpha	D	galacto	pyranose	P	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+PLB	GAL	beta	D	galacto	pyranose	P	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+PMA	MAN	alpha	D	manno	pyranose	P	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+PMB	BMA	beta	D	manno	pyranose	P	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+PNA	AFD	alpha	D	allo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PNB	ALL	beta	D	allo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PTA		alpha	D	talo	pyranose	P	undecoded			UNSUPPORTED_ONEBEAD
+PTB	SDY	beta	D	talo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PeA	Z6H	alpha	L	altro	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PeB	3MK	beta	L	altro	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PgA		alpha	L	gluco	pyranose	P	undecoded			UNSUPPORTED_ONEBEAD
+PgB	Z8T	beta	L	gluco	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PkA	GUP	alpha	L	gulo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PkB	Z8H	beta	L	gulo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PlA	GXL	alpha	L	galacto	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PlB	GIV	beta	L	galacto	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PmA		alpha	L	manno	pyranose	P	undecoded			UNSUPPORTED_ONEBEAD
+PmB		beta	L	manno	pyranose	P	undecoded			UNSUPPORTED_ONEBEAD
+PnA	Z2D	alpha	L	allo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PnB	WOO	beta	L	allo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+PtA		alpha	L	talo	pyranose	P	undecoded			UNSUPPORTED_ONEBEAD
+PtB	ZEE	beta	L	talo	pyranose	P	ccd_name_index			UNSUPPORTED_ONEBEAD
+QBD		alpha	D	sorbo	furanose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QBU	UEA	beta	D	sorbo	furanose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QCD	Z9N	alpha	D	fructo	furanose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QCU	FRU	beta	D	fructo	furanose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QEA	SHD	alpha	D	altro	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QEB		beta	D	altro	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QGA	GLC	alpha	D	gluco	pyranose	Q	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+QGB	BGC	beta	D	gluco	pyranose	Q	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+QJD		alpha	D	tagato	furanose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QJU		beta	D	tagato	furanose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QKA	4GL	alpha	D	gulo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QKB	GL0	beta	D	gulo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QLA	GLA	alpha	D	galacto	pyranose	Q	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+QLB	GAL	beta	D	galacto	pyranose	Q	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+QMA	MAN	alpha	D	manno	pyranose	Q	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+QMB	BMA	beta	D	manno	pyranose	Q	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+QNA	AFD	alpha	D	allo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QNB	ALL	beta	D	allo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QPD	PSV	alpha	D	psico	furanose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QPU	TTV	beta	D	psico	furanose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QTA		alpha	D	talo	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QTB	SDY	beta	D	talo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QVA	A2G	alpha	D	galacto	pyranose	Q	ccd_name_index	NGA	alpha-D-GalNAcp	SUPPORTED_ONEBEAD
+QVB	NGA	beta	D	galacto	pyranose	Q	ccd_name_index	NGA	beta-D-GalNAcp	SUPPORTED_ONEBEAD
+QWA	BM3	alpha	D	manno	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QWB	BM7	beta	D	manno	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QYA	NDG	alpha	D	gluco	pyranose	Q	ccd_name_index	NAG	alpha-D-GlcNAcp	SUPPORTED_ONEBEAD
+QYB	NAG	beta	D	gluco	pyranose	Q	ccd_name_index	NAG	beta-D-GlcNAcp	SUPPORTED_ONEBEAD
+QbD		alpha	L	sorbo	furanose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QbU		beta	L	sorbo	furanose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QcD		alpha	L	fructo	furanose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QcU	LFR	beta	L	fructo	furanose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QeA	Z6H	alpha	L	altro	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QeB	3MK	beta	L	altro	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QgA		alpha	L	gluco	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QgB	Z8T	beta	L	gluco	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QjD		alpha	L	tagato	furanose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QjU		beta	L	tagato	furanose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QkA	GUP	alpha	L	gulo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QkB	Z8H	beta	L	gulo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QlA	GXL	alpha	L	galacto	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QlB	GIV	beta	L	galacto	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QmA		alpha	L	manno	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QmB		beta	L	manno	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QnA	Z2D	alpha	L	allo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QnB	WOO	beta	L	allo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QpD	SF6	alpha	L	psico	furanose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QpU	SF9	beta	L	psico	furanose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QtA		alpha	L	talo	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QtB	ZEE	beta	L	talo	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QvA	YYQ	alpha	L	galacto	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QvB		beta	L	galacto	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QwA		alpha	L	manno	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QwB		beta	L	manno	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+QyA	NGZ	alpha	L	gluco	pyranose	Q	ccd_name_index			UNSUPPORTED_ONEBEAD
+QyB		beta	L	gluco	pyranose	Q	undecoded			UNSUPPORTED_ONEBEAD
+REA	SHD	alpha	D	altro	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+REB		beta	D	altro	pyranose	R	undecoded			UNSUPPORTED_ONEBEAD
+RGA	GLC	alpha	D	gluco	pyranose	R	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+RGB	BGC	beta	D	gluco	pyranose	R	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+RKA	4GL	alpha	D	gulo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RKB	GL0	beta	D	gulo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RLA	GLA	alpha	D	galacto	pyranose	R	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+RLB	GAL	beta	D	galacto	pyranose	R	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+RMA	MAN	alpha	D	manno	pyranose	R	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+RMB	BMA	beta	D	manno	pyranose	R	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+RNA	AFD	alpha	D	allo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RNB	ALL	beta	D	allo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RTA		alpha	D	talo	pyranose	R	undecoded			UNSUPPORTED_ONEBEAD
+RTB	SDY	beta	D	talo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+ReA	Z6H	alpha	L	altro	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+ReB	3MK	beta	L	altro	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RgA		alpha	L	gluco	pyranose	R	undecoded			UNSUPPORTED_ONEBEAD
+RgB	Z8T	beta	L	gluco	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RkA	GUP	alpha	L	gulo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RkB	Z8H	beta	L	gulo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RlA	GXL	alpha	L	galacto	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RlB	GIV	beta	L	galacto	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RmA		alpha	L	manno	pyranose	R	undecoded			UNSUPPORTED_ONEBEAD
+RmB		beta	L	manno	pyranose	R	undecoded			UNSUPPORTED_ONEBEAD
+RnA	Z2D	alpha	L	allo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RnB	WOO	beta	L	allo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+RtA		alpha	L	talo	pyranose	R	undecoded			UNSUPPORTED_ONEBEAD
+RtB	ZEE	beta	L	talo	pyranose	R	ccd_name_index			UNSUPPORTED_ONEBEAD
+SEA	SHD	alpha	D	altro	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SEB		beta	D	altro	pyranose	S	undecoded			UNSUPPORTED_ONEBEAD
+SGA	GLC	alpha	D	gluco	pyranose	S	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+SGB	BGC	beta	D	gluco	pyranose	S	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+SKA	4GL	alpha	D	gulo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SKB	GL0	beta	D	gulo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SLA	GLA	alpha	D	galacto	pyranose	S	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+SLB	GAL	beta	D	galacto	pyranose	S	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+SMA	MAN	alpha	D	manno	pyranose	S	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+SMB	BMA	beta	D	manno	pyranose	S	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+SNA	AFD	alpha	D	allo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SNB	ALL	beta	D	allo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+STA		alpha	D	talo	pyranose	S	undecoded			UNSUPPORTED_ONEBEAD
+STB	SDY	beta	D	talo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SeA	Z6H	alpha	L	altro	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SeB	3MK	beta	L	altro	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SgA		alpha	L	gluco	pyranose	S	undecoded			UNSUPPORTED_ONEBEAD
+SgB	Z8T	beta	L	gluco	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SkA	GUP	alpha	L	gulo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SkB	Z8H	beta	L	gulo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SlA	GXL	alpha	L	galacto	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SlB	GIV	beta	L	galacto	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SmA		alpha	L	manno	pyranose	S	undecoded			UNSUPPORTED_ONEBEAD
+SmB		beta	L	manno	pyranose	S	undecoded			UNSUPPORTED_ONEBEAD
+SnA	Z2D	alpha	L	allo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+SnB	WOO	beta	L	allo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+StA		alpha	L	talo	pyranose	S	undecoded			UNSUPPORTED_ONEBEAD
+StB	ZEE	beta	L	talo	pyranose	S	ccd_name_index			UNSUPPORTED_ONEBEAD
+TAA	64K	alpha	D	arabino	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TAB	SEJ	beta	D	arabino	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TDA	LDY	alpha	D	lyxo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TDB	Z4W	beta	D	lyxo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TEA	SHD	alpha	D	altro	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TEB		beta	D	altro	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TFA	FCA	alpha	D	fuco	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TFB	FCB	beta	D	fuco	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TGA	GLC	alpha	D	gluco	pyranose	T	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+TGB	BGC	beta	D	gluco	pyranose	T	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+THA	XXR	alpha	D	rhamno	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+THB	UBO	beta	D	rhamno	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TKA	4GL	alpha	D	gulo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TKB	GL0	beta	D	gulo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TLA	GLA	alpha	D	galacto	pyranose	T	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+TLB	GAL	beta	D	galacto	pyranose	T	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+TMA	MAN	alpha	D	manno	pyranose	T	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+TMB	BMA	beta	D	manno	pyranose	T	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+TNA	AFD	alpha	D	allo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TNB	ALL	beta	D	allo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TOA	ADA	alpha	D	galacto	pyranuronic acid	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TOB	GTR	beta	D	galacto	pyranuronic acid	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TQA	G6D	alpha	D	quinovo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TQB	YYK	beta	D	quinovo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TRA	YYM	alpha	D	ribo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TRB	RIP	beta	D	ribo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TTA		alpha	D	talo	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TTB	SDY	beta	D	talo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TUA		alpha	D	ido	pyranuronic acid	T	undecoded			UNSUPPORTED_ONEBEAD
+TUB		beta	D	ido	pyranuronic acid	T	undecoded			UNSUPPORTED_ONEBEAD
+TXA	XYS	alpha	D	xylo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TXB	HSZ	beta	D	xylo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TZA	GCU	alpha	D	gluco	pyranuronic acid	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TZB	BDP	beta	D	gluco	pyranuronic acid	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TaA	ARA	alpha	L	arabino	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TaB	ARB	beta	L	arabino	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TdA		alpha	L	lyxo	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TdB		beta	L	lyxo	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TeA	Z6H	alpha	L	altro	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TeB	3MK	beta	L	altro	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TfA	FUC	alpha	L	fuco	pyranose	T	ccd_name_index	FUC	alpha-L-Fucp	SUPPORTED_ONEBEAD
+TfB	FUL	beta	L	fuco	pyranose	T	ccd_name_index	FUC	beta-L-Fucp	SUPPORTED_ONEBEAD
+TgA		alpha	L	gluco	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TgB	Z8T	beta	L	gluco	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+ThA	RAM	alpha	L	rhamno	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+ThB	RM4	beta	L	rhamno	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TkA	GUP	alpha	L	gulo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TkB	Z8H	beta	L	gulo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TlA	GXL	alpha	L	galacto	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TlB	GIV	beta	L	galacto	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TmA		alpha	L	manno	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TmB		beta	L	manno	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TnA	Z2D	alpha	L	allo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TnB	WOO	beta	L	allo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+ToA		alpha	L	galacto	pyranuronic acid	T	undecoded			UNSUPPORTED_ONEBEAD
+ToB		beta	L	galacto	pyranuronic acid	T	undecoded			UNSUPPORTED_ONEBEAD
+TqA		alpha	L	quinovo	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TqB		beta	L	quinovo	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TrA		alpha	L	ribo	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TrB	0MK	beta	L	ribo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TtA		alpha	L	talo	pyranose	T	undecoded			UNSUPPORTED_ONEBEAD
+TtB	ZEE	beta	L	talo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TuA	IDR	alpha	L	ido	pyranuronic acid	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TuB		beta	L	ido	pyranuronic acid	T	undecoded			UNSUPPORTED_ONEBEAD
+TxA	HSY	alpha	L	xylo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TxB	LXC	beta	L	xylo	pyranose	T	ccd_name_index			UNSUPPORTED_ONEBEAD
+TzA		alpha	L	gluco	pyranuronic acid	T	undecoded			UNSUPPORTED_ONEBEAD
+TzB		beta	L	gluco	pyranuronic acid	T	undecoded			UNSUPPORTED_ONEBEAD
+UBD		alpha	D	sorbo	furanose	U	undecoded			UNSUPPORTED_ONEBEAD
+UBU	UEA	beta	D	sorbo	furanose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UCD	Z9N	alpha	D	fructo	furanose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UCU	FRU	beta	D	fructo	furanose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UEA	SHD	alpha	D	altro	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UEB		beta	D	altro	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+UGA	GLC	alpha	D	gluco	pyranose	U	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+UGB	BGC	beta	D	gluco	pyranose	U	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+UJD		alpha	D	tagato	furanose	U	undecoded			UNSUPPORTED_ONEBEAD
+UJU		beta	D	tagato	furanose	U	undecoded			UNSUPPORTED_ONEBEAD
+UKA	4GL	alpha	D	gulo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UKB	GL0	beta	D	gulo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+ULA	GLA	alpha	D	galacto	pyranose	U	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+ULB	GAL	beta	D	galacto	pyranose	U	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+UMA	MAN	alpha	D	manno	pyranose	U	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+UMB	BMA	beta	D	manno	pyranose	U	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+UNA	AFD	alpha	D	allo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UNB	ALL	beta	D	allo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UPD	PSV	alpha	D	psico	furanose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UPU	TTV	beta	D	psico	furanose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UTA		alpha	D	talo	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+UTB	SDY	beta	D	talo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UVA	A2G	alpha	D	galacto	pyranose	U	ccd_name_index	NGA	alpha-D-GalNAcp	SUPPORTED_ONEBEAD
+UVB	NGA	beta	D	galacto	pyranose	U	ccd_name_index	NGA	beta-D-GalNAcp	SUPPORTED_ONEBEAD
+UWA	BM3	alpha	D	manno	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UWB	BM7	beta	D	manno	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UYA	NDG	alpha	D	gluco	pyranose	U	ccd_name_index	NAG	alpha-D-GlcNAcp	SUPPORTED_ONEBEAD
+UYB	NAG	beta	D	gluco	pyranose	U	ccd_name_index	NAG	beta-D-GlcNAcp	SUPPORTED_ONEBEAD
+UbD		alpha	L	sorbo	furanose	U	undecoded			UNSUPPORTED_ONEBEAD
+UbU		beta	L	sorbo	furanose	U	undecoded			UNSUPPORTED_ONEBEAD
+UcD		alpha	L	fructo	furanose	U	undecoded			UNSUPPORTED_ONEBEAD
+UcU	LFR	beta	L	fructo	furanose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UeA	Z6H	alpha	L	altro	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UeB	3MK	beta	L	altro	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UgA		alpha	L	gluco	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+UgB	Z8T	beta	L	gluco	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UjD		alpha	L	tagato	furanose	U	undecoded			UNSUPPORTED_ONEBEAD
+UjU		beta	L	tagato	furanose	U	undecoded			UNSUPPORTED_ONEBEAD
+UkA	GUP	alpha	L	gulo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UkB	Z8H	beta	L	gulo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UlA	GXL	alpha	L	galacto	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UlB	GIV	beta	L	galacto	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UmA		alpha	L	manno	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+UmB		beta	L	manno	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+UnA	Z2D	alpha	L	allo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UnB	WOO	beta	L	allo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UpD	SF6	alpha	L	psico	furanose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UpU	SF9	beta	L	psico	furanose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UtA		alpha	L	talo	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+UtB	ZEE	beta	L	talo	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UvA	YYQ	alpha	L	galacto	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UvB		beta	L	galacto	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+UwA		alpha	L	manno	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+UwB		beta	L	manno	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+UyA	NGZ	alpha	L	gluco	pyranose	U	ccd_name_index			UNSUPPORTED_ONEBEAD
+UyB		beta	L	gluco	pyranose	U	undecoded			UNSUPPORTED_ONEBEAD
+VBD		alpha	D	sorbo	furanose	V	undecoded			UNSUPPORTED_ONEBEAD
+VBU	UEA	beta	D	sorbo	furanose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VCD	Z9N	alpha	D	fructo	furanose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VCU	FRU	beta	D	fructo	furanose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VEA	SHD	alpha	D	altro	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VEB		beta	D	altro	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+VGA	GLC	alpha	D	gluco	pyranose	V	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+VGB	BGC	beta	D	gluco	pyranose	V	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+VJD		alpha	D	tagato	furanose	V	undecoded			UNSUPPORTED_ONEBEAD
+VJU		beta	D	tagato	furanose	V	undecoded			UNSUPPORTED_ONEBEAD
+VKA	4GL	alpha	D	gulo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VKB	GL0	beta	D	gulo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VLA	GLA	alpha	D	galacto	pyranose	V	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+VLB	GAL	beta	D	galacto	pyranose	V	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+VMA	MAN	alpha	D	manno	pyranose	V	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+VMB	BMA	beta	D	manno	pyranose	V	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+VNA	AFD	alpha	D	allo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VNB	ALL	beta	D	allo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VPD	PSV	alpha	D	psico	furanose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VPU	TTV	beta	D	psico	furanose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VTA		alpha	D	talo	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+VTB	SDY	beta	D	talo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VVA	A2G	alpha	D	galacto	pyranose	V	ccd_name_index	NGA	alpha-D-GalNAcp	SUPPORTED_ONEBEAD
+VVB	NGA	beta	D	galacto	pyranose	V	ccd_name_index	NGA	beta-D-GalNAcp	SUPPORTED_ONEBEAD
+VWA	BM3	alpha	D	manno	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VWB	BM7	beta	D	manno	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VYA	NDG	alpha	D	gluco	pyranose	V	ccd_name_index	NAG	alpha-D-GlcNAcp	SUPPORTED_ONEBEAD
+VYB	NAG	beta	D	gluco	pyranose	V	ccd_name_index	NAG	beta-D-GlcNAcp	SUPPORTED_ONEBEAD
+VbD		alpha	L	sorbo	furanose	V	undecoded			UNSUPPORTED_ONEBEAD
+VbU		beta	L	sorbo	furanose	V	undecoded			UNSUPPORTED_ONEBEAD
+VcD		alpha	L	fructo	furanose	V	undecoded			UNSUPPORTED_ONEBEAD
+VcU	LFR	beta	L	fructo	furanose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VeA	Z6H	alpha	L	altro	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VeB	3MK	beta	L	altro	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VgA		alpha	L	gluco	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+VgB	Z8T	beta	L	gluco	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VjD		alpha	L	tagato	furanose	V	undecoded			UNSUPPORTED_ONEBEAD
+VjU		beta	L	tagato	furanose	V	undecoded			UNSUPPORTED_ONEBEAD
+VkA	GUP	alpha	L	gulo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VkB	Z8H	beta	L	gulo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VlA	GXL	alpha	L	galacto	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VlB	GIV	beta	L	galacto	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VmA		alpha	L	manno	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+VmB		beta	L	manno	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+VnA	Z2D	alpha	L	allo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VnB	WOO	beta	L	allo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VpD	SF6	alpha	L	psico	furanose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VpU	SF9	beta	L	psico	furanose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VtA		alpha	L	talo	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+VtB	ZEE	beta	L	talo	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VvA	YYQ	alpha	L	galacto	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VvB		beta	L	galacto	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+VwA		alpha	L	manno	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+VwB		beta	L	manno	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+VyA	NGZ	alpha	L	gluco	pyranose	V	ccd_name_index			UNSUPPORTED_ONEBEAD
+VyB		beta	L	gluco	pyranose	V	undecoded			UNSUPPORTED_ONEBEAD
+WAA	64K	alpha	D	arabino	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WAB	SEJ	beta	D	arabino	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WBA		alpha	D	sorbo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WBB		beta	D	sorbo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WBD		alpha	D	sorbo	furanose	W	undecoded			UNSUPPORTED_ONEBEAD
+WBU	UEA	beta	D	sorbo	furanose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WCA		alpha	D	fructo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WCB	BDF	beta	D	fructo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WCD	Z9N	alpha	D	fructo	furanose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WCU	FRU	beta	D	fructo	furanose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WDA	LDY	alpha	D	lyxo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WDB	Z4W	beta	D	lyxo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WEA	SHD	alpha	D	altro	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WEB		beta	D	altro	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WFA	FCA	alpha	D	fuco	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WFB	FCB	beta	D	fuco	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WGA	GLC	alpha	D	gluco	pyranose	W	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+WGB	BGC	beta	D	gluco	pyranose	W	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+WHA	XXR	alpha	D	rhamno	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WHB	UBO	beta	D	rhamno	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WJA	T6T	alpha	D	tagato	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WJB		beta	D	tagato	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WJD		alpha	D	tagato	furanose	W	undecoded			UNSUPPORTED_ONEBEAD
+WJU		beta	D	tagato	furanose	W	undecoded			UNSUPPORTED_ONEBEAD
+WKA	4GL	alpha	D	gulo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WKB	GL0	beta	D	gulo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WLA	GLA	alpha	D	galacto	pyranose	W	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+WLB	GAL	beta	D	galacto	pyranose	W	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+WMA	MAN	alpha	D	manno	pyranose	W	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+WMB	BMA	beta	D	manno	pyranose	W	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+WNA	AFD	alpha	D	allo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WNB	ALL	beta	D	allo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WOA	ADA	alpha	D	galacto	pyranuronic acid	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WOB	GTR	beta	D	galacto	pyranuronic acid	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WPA		alpha	D	psico	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WPB		beta	D	psico	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WPD	PSV	alpha	D	psico	furanose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WPU	TTV	beta	D	psico	furanose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WQA	G6D	alpha	D	quinovo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WQB	YYK	beta	D	quinovo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WRA	YYM	alpha	D	ribo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WRB	RIP	beta	D	ribo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WTA		alpha	D	talo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WTB	SDY	beta	D	talo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WUA		alpha	D	ido	pyranuronic acid	W	undecoded			UNSUPPORTED_ONEBEAD
+WUB		beta	D	ido	pyranuronic acid	W	undecoded			UNSUPPORTED_ONEBEAD
+WVA	A2G	alpha	D	galacto	pyranose	W	ccd_name_index	NGA	alpha-D-GalNAcp	SUPPORTED_ONEBEAD
+WVB	NGA	beta	D	galacto	pyranose	W	ccd_name_index	NGA	beta-D-GalNAcp	SUPPORTED_ONEBEAD
+WWA	BM3	alpha	D	manno	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WWB	BM7	beta	D	manno	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WXA	XYS	alpha	D	xylo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WXB	HSZ	beta	D	xylo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WYA	NDG	alpha	D	gluco	pyranose	W	ccd_name_index	NAG	alpha-D-GlcNAcp	SUPPORTED_ONEBEAD
+WYB	NAG	beta	D	gluco	pyranose	W	ccd_name_index	NAG	beta-D-GlcNAcp	SUPPORTED_ONEBEAD
+WZA	GCU	alpha	D	gluco	pyranuronic acid	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WZB	BDP	beta	D	gluco	pyranuronic acid	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WaA	ARA	alpha	L	arabino	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WaB	ARB	beta	L	arabino	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WbA	SOE	alpha	L	sorbo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WbB		beta	L	sorbo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WbD		alpha	L	sorbo	furanose	W	undecoded			UNSUPPORTED_ONEBEAD
+WbU		beta	L	sorbo	furanose	W	undecoded			UNSUPPORTED_ONEBEAD
+WcA		alpha	L	fructo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WcB		beta	L	fructo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WcD		alpha	L	fructo	furanose	W	undecoded			UNSUPPORTED_ONEBEAD
+WcU	LFR	beta	L	fructo	furanose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WdA		alpha	L	lyxo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WdB		beta	L	lyxo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WeA	Z6H	alpha	L	altro	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WeB	3MK	beta	L	altro	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WfA	FUC	alpha	L	fuco	pyranose	W	ccd_name_index	FUC	alpha-L-Fucp	SUPPORTED_ONEBEAD
+WfB	FUL	beta	L	fuco	pyranose	W	ccd_name_index	FUC	beta-L-Fucp	SUPPORTED_ONEBEAD
+WgA		alpha	L	gluco	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WgB	Z8T	beta	L	gluco	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WhA	RAM	alpha	L	rhamno	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WhB	RM4	beta	L	rhamno	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WjA		alpha	L	tagato	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WjB		beta	L	tagato	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WjD		alpha	L	tagato	furanose	W	undecoded			UNSUPPORTED_ONEBEAD
+WjU		beta	L	tagato	furanose	W	undecoded			UNSUPPORTED_ONEBEAD
+WkA	GUP	alpha	L	gulo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WkB	Z8H	beta	L	gulo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WlA	GXL	alpha	L	galacto	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WlB	GIV	beta	L	galacto	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WmA		alpha	L	manno	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WmB		beta	L	manno	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WnA	Z2D	alpha	L	allo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WnB	WOO	beta	L	allo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WoA		alpha	L	galacto	pyranuronic acid	W	undecoded			UNSUPPORTED_ONEBEAD
+WoB		beta	L	galacto	pyranuronic acid	W	undecoded			UNSUPPORTED_ONEBEAD
+WpA		alpha	L	psico	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WpB		beta	L	psico	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WpD	SF6	alpha	L	psico	furanose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WpU	SF9	beta	L	psico	furanose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WqA		alpha	L	quinovo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WqB		beta	L	quinovo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WrA		alpha	L	ribo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WrB	0MK	beta	L	ribo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WtA		alpha	L	talo	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WtB	ZEE	beta	L	talo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WuA	IDR	alpha	L	ido	pyranuronic acid	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WuB		beta	L	ido	pyranuronic acid	W	undecoded			UNSUPPORTED_ONEBEAD
+WvA	YYQ	alpha	L	galacto	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WvB		beta	L	galacto	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WwA		alpha	L	manno	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WwB		beta	L	manno	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WxA	HSY	alpha	L	xylo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WxB	LXC	beta	L	xylo	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WyA	NGZ	alpha	L	gluco	pyranose	W	ccd_name_index			UNSUPPORTED_ONEBEAD
+WyB		beta	L	gluco	pyranose	W	undecoded			UNSUPPORTED_ONEBEAD
+WzA		alpha	L	gluco	pyranuronic acid	W	undecoded			UNSUPPORTED_ONEBEAD
+WzB		beta	L	gluco	pyranuronic acid	W	undecoded			UNSUPPORTED_ONEBEAD
+XEA	SHD	alpha	D	altro	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XEB		beta	D	altro	pyranose	X	undecoded			UNSUPPORTED_ONEBEAD
+XGA	GLC	alpha	D	gluco	pyranose	X	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+XGB	BGC	beta	D	gluco	pyranose	X	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+XKA	4GL	alpha	D	gulo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XKB	GL0	beta	D	gulo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XLA	GLA	alpha	D	galacto	pyranose	X	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+XLB	GAL	beta	D	galacto	pyranose	X	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+XMA	MAN	alpha	D	manno	pyranose	X	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+XMB	BMA	beta	D	manno	pyranose	X	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+XNA	AFD	alpha	D	allo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XNB	ALL	beta	D	allo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XTA		alpha	D	talo	pyranose	X	undecoded			UNSUPPORTED_ONEBEAD
+XTB	SDY	beta	D	talo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XeA	Z6H	alpha	L	altro	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XeB	3MK	beta	L	altro	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XgA		alpha	L	gluco	pyranose	X	undecoded			UNSUPPORTED_ONEBEAD
+XgB	Z8T	beta	L	gluco	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XkA	GUP	alpha	L	gulo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XkB	Z8H	beta	L	gulo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XlA	GXL	alpha	L	galacto	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XlB	GIV	beta	L	galacto	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XmA		alpha	L	manno	pyranose	X	undecoded			UNSUPPORTED_ONEBEAD
+XmB		beta	L	manno	pyranose	X	undecoded			UNSUPPORTED_ONEBEAD
+XnA	Z2D	alpha	L	allo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XnB	WOO	beta	L	allo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+XtA		alpha	L	talo	pyranose	X	undecoded			UNSUPPORTED_ONEBEAD
+XtB	ZEE	beta	L	talo	pyranose	X	ccd_name_index			UNSUPPORTED_ONEBEAD
+YAA	64K	alpha	D	arabino	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YAB	SEJ	beta	D	arabino	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YDA	LDY	alpha	D	lyxo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YDB	Z4W	beta	D	lyxo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YEA	SHD	alpha	D	altro	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YEB		beta	D	altro	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YFA	FCA	alpha	D	fuco	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YFB	FCB	beta	D	fuco	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YGA	GLC	alpha	D	gluco	pyranose	Y	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+YGB	BGC	beta	D	gluco	pyranose	Y	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+YHA	XXR	alpha	D	rhamno	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YHB	UBO	beta	D	rhamno	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YKA	4GL	alpha	D	gulo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YKB	GL0	beta	D	gulo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YLA	GLA	alpha	D	galacto	pyranose	Y	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+YLB	GAL	beta	D	galacto	pyranose	Y	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+YMA	MAN	alpha	D	manno	pyranose	Y	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+YMB	BMA	beta	D	manno	pyranose	Y	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+YNA	AFD	alpha	D	allo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YNB	ALL	beta	D	allo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YOA	ADA	alpha	D	galacto	pyranuronic acid	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YOB	GTR	beta	D	galacto	pyranuronic acid	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YQA	G6D	alpha	D	quinovo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YQB	YYK	beta	D	quinovo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YRA	YYM	alpha	D	ribo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YRB	RIP	beta	D	ribo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YTA		alpha	D	talo	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YTB	SDY	beta	D	talo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YUA		alpha	D	ido	pyranuronic acid	Y	undecoded			UNSUPPORTED_ONEBEAD
+YUB		beta	D	ido	pyranuronic acid	Y	undecoded			UNSUPPORTED_ONEBEAD
+YXA	XYS	alpha	D	xylo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YXB	HSZ	beta	D	xylo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YZA	GCU	alpha	D	gluco	pyranuronic acid	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YZB	BDP	beta	D	gluco	pyranuronic acid	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YaA	ARA	alpha	L	arabino	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YaB	ARB	beta	L	arabino	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YdA		alpha	L	lyxo	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YdB		beta	L	lyxo	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YeA	Z6H	alpha	L	altro	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YeB	3MK	beta	L	altro	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YfA	FUC	alpha	L	fuco	pyranose	Y	ccd_name_index	FUC	alpha-L-Fucp	SUPPORTED_ONEBEAD
+YfB	FUL	beta	L	fuco	pyranose	Y	ccd_name_index	FUC	beta-L-Fucp	SUPPORTED_ONEBEAD
+YgA		alpha	L	gluco	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YgB	Z8T	beta	L	gluco	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YhA	RAM	alpha	L	rhamno	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YhB	RM4	beta	L	rhamno	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YkA	GUP	alpha	L	gulo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YkB	Z8H	beta	L	gulo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YlA	GXL	alpha	L	galacto	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YlB	GIV	beta	L	galacto	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YmA		alpha	L	manno	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YmB		beta	L	manno	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YnA	Z2D	alpha	L	allo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YnB	WOO	beta	L	allo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YoA		alpha	L	galacto	pyranuronic acid	Y	undecoded			UNSUPPORTED_ONEBEAD
+YoB		beta	L	galacto	pyranuronic acid	Y	undecoded			UNSUPPORTED_ONEBEAD
+YqA		alpha	L	quinovo	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YqB		beta	L	quinovo	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YrA		alpha	L	ribo	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YrB	0MK	beta	L	ribo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YtA		alpha	L	talo	pyranose	Y	undecoded			UNSUPPORTED_ONEBEAD
+YtB	ZEE	beta	L	talo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YuA	IDR	alpha	L	ido	pyranuronic acid	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YuB		beta	L	ido	pyranuronic acid	Y	undecoded			UNSUPPORTED_ONEBEAD
+YxA	HSY	alpha	L	xylo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YxB	LXC	beta	L	xylo	pyranose	Y	ccd_name_index			UNSUPPORTED_ONEBEAD
+YzA		alpha	L	gluco	pyranuronic acid	Y	undecoded			UNSUPPORTED_ONEBEAD
+YzB		beta	L	gluco	pyranuronic acid	Y	undecoded			UNSUPPORTED_ONEBEAD
+ZAA	64K	alpha	D	arabino	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZAB	SEJ	beta	D	arabino	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZAD	BXY	alpha	D	arabino	furanose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZAU	BXX	beta	D	arabino	furanose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZDA	LDY	alpha	D	lyxo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZDB	Z4W	beta	D	lyxo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZDD		alpha	D	lyxo	furanose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZDU		beta	D	lyxo	furanose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZEA	SHD	alpha	D	altro	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZEB		beta	D	altro	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZFA	FCA	alpha	D	fuco	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZFB	FCB	beta	D	fuco	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZGA	GLC	alpha	D	gluco	pyranose	Z	ccd_name_index	GLC	alpha-D-Glcp	SUPPORTED_ONEBEAD
+ZGB	BGC	beta	D	gluco	pyranose	Z	ccd_name_index	GLC	beta-D-Glcp	SUPPORTED_ONEBEAD
+ZHA	XXR	alpha	D	rhamno	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZHB	UBO	beta	D	rhamno	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZKA	4GL	alpha	D	gulo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZKB	GL0	beta	D	gulo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZLA	GLA	alpha	D	galacto	pyranose	Z	ccd_name_index	GAL	alpha-D-Galp	SUPPORTED_ONEBEAD
+ZLB	GAL	beta	D	galacto	pyranose	Z	ccd_name_index	GAL	beta-D-Galp	SUPPORTED_ONEBEAD
+ZMA	MAN	alpha	D	manno	pyranose	Z	ccd_name_index	MAN	alpha-D-Manp	SUPPORTED_ONEBEAD
+ZMB	BMA	beta	D	manno	pyranose	Z	ccd_name_index	BMA	beta-D-Manp	SUPPORTED_ONEBEAD
+ZNA	AFD	alpha	D	allo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZNB	ALL	beta	D	allo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZOA	ADA	alpha	D	galacto	pyranuronic acid	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZOB	GTR	beta	D	galacto	pyranuronic acid	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZQA	G6D	alpha	D	quinovo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZQB	YYK	beta	D	quinovo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZRA	YYM	alpha	D	ribo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZRB	RIP	beta	D	ribo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZRD	RIB	alpha	D	ribo	furanose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZRU	BDR	beta	D	ribo	furanose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZTA		alpha	D	talo	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZTB	SDY	beta	D	talo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZUA		alpha	D	ido	pyranuronic acid	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZUB		beta	D	ido	pyranuronic acid	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZXA	XYS	alpha	D	xylo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZXB	HSZ	beta	D	xylo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZXD		alpha	D	xylo	furanose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZXU	XYZ	beta	D	xylo	furanose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZZA	GCU	alpha	D	gluco	pyranuronic acid	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZZB	BDP	beta	D	gluco	pyranuronic acid	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZaA	ARA	alpha	L	arabino	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZaB	ARB	beta	L	arabino	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZaD	AHR	alpha	L	arabino	furanose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZaU	FUB	beta	L	arabino	furanose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZdA		alpha	L	lyxo	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZdB		beta	L	lyxo	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZdD		alpha	L	lyxo	furanose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZdU		beta	L	lyxo	furanose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZeA	Z6H	alpha	L	altro	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZeB	3MK	beta	L	altro	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZfA	FUC	alpha	L	fuco	pyranose	Z	ccd_name_index	FUC	alpha-L-Fucp	SUPPORTED_ONEBEAD
+ZfB	FUL	beta	L	fuco	pyranose	Z	ccd_name_index	FUC	beta-L-Fucp	SUPPORTED_ONEBEAD
+ZgA		alpha	L	gluco	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZgB	Z8T	beta	L	gluco	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZhA	RAM	alpha	L	rhamno	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZhB	RM4	beta	L	rhamno	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZkA	GUP	alpha	L	gulo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZkB	Z8H	beta	L	gulo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZlA	GXL	alpha	L	galacto	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZlB	GIV	beta	L	galacto	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZmA		alpha	L	manno	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZmB		beta	L	manno	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZnA	Z2D	alpha	L	allo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZnB	WOO	beta	L	allo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZoA		alpha	L	galacto	pyranuronic acid	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZoB		beta	L	galacto	pyranuronic acid	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZqA		alpha	L	quinovo	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZqB		beta	L	quinovo	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZrA		alpha	L	ribo	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZrB	0MK	beta	L	ribo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZrD	Z6J	alpha	L	ribo	furanose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZrU	32O	beta	L	ribo	furanose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZtA		alpha	L	talo	pyranose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZtB	ZEE	beta	L	talo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZuA	IDR	alpha	L	ido	pyranuronic acid	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZuB		beta	L	ido	pyranuronic acid	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZxA	HSY	alpha	L	xylo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZxB	LXC	beta	L	xylo	pyranose	Z	ccd_name_index			UNSUPPORTED_ONEBEAD
+ZxD		alpha	L	xylo	furanose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZxU		beta	L	xylo	furanose	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZzA		alpha	L	gluco	pyranuronic acid	Z	undecoded			UNSUPPORTED_ONEBEAD
+ZzB		beta	L	gluco	pyranuronic acid	Z	undecoded			UNSUPPORTED_ONEBEAD
